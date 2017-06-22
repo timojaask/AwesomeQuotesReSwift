@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F0594571EFC028A000E013D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0594561EFC028A000E013D /* AppDelegate.swift */; };
-		2F0594591EFC028A000E013D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0594581EFC028A000E013D /* ViewController.swift */; };
-		2F05945C1EFC028A000E013D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F05945A1EFC028A000E013D /* Main.storyboard */; };
-		2F05945F1EFC028A000E013D /* AwesomeQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F05945D1EFC028A000E013D /* AwesomeQuotes.xcdatamodeld */; };
+		2F0594591EFC028A000E013D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0594581EFC028A000E013D /* RootViewController.swift */; };
 		2F0594611EFC028A000E013D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594601EFC028A000E013D /* Assets.xcassets */; };
 		2F0594641EFC028A000E013D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594621EFC028A000E013D /* LaunchScreen.storyboard */; };
 		2F05946F1EFC028A000E013D /* AwesomeQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05946E1EFC028A000E013D /* AwesomeQuotesTests.swift */; };
@@ -37,9 +35,7 @@
 /* Begin PBXFileReference section */
 		2F0594531EFC028A000E013D /* AwesomeQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0594561EFC028A000E013D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F0594581EFC028A000E013D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2F05945B1EFC028A000E013D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2F05945E1EFC028A000E013D /* AwesomeQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AwesomeQuotes.xcdatamodel; sourceTree = "<group>"; };
+		2F0594581EFC028A000E013D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2F0594601EFC028A000E013D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F0594631EFC028A000E013D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F0594651EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,12 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				2F0594561EFC028A000E013D /* AppDelegate.swift */,
-				2F0594581EFC028A000E013D /* ViewController.swift */,
-				2F05945A1EFC028A000E013D /* Main.storyboard */,
+				2F0594581EFC028A000E013D /* RootViewController.swift */,
 				2F0594601EFC028A000E013D /* Assets.xcassets */,
 				2F0594621EFC028A000E013D /* LaunchScreen.storyboard */,
 				2F0594651EFC028A000E013D /* Info.plist */,
-				2F05945D1EFC028A000E013D /* AwesomeQuotes.xcdatamodeld */,
 			);
 			path = AwesomeQuotes;
 			sourceTree = "<group>";
@@ -240,7 +234,6 @@
 			files = (
 				2F0594641EFC028A000E013D /* LaunchScreen.storyboard in Resources */,
 				2F0594611EFC028A000E013D /* Assets.xcassets in Resources */,
-				2F05945C1EFC028A000E013D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,8 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0594591EFC028A000E013D /* ViewController.swift in Sources */,
-				2F05945F1EFC028A000E013D /* AwesomeQuotes.xcdatamodeld in Sources */,
+				2F0594591EFC028A000E013D /* RootViewController.swift in Sources */,
 				2F0594571EFC028A000E013D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,14 +295,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2F05945A1EFC028A000E013D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F05945B1EFC028A000E013D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2F0594621EFC028A000E013D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -520,6 +504,7 @@
 				2F0594801EFC028A000E013D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F0594811EFC028A000E013D /* Build configuration list for PBXNativeTarget "AwesomeQuotesTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +513,7 @@
 				2F0594831EFC028A000E013D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F0594841EFC028A000E013D /* Build configuration list for PBXNativeTarget "AwesomeQuotesUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,21 +522,9 @@
 				2F0594861EFC028A000E013D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2F05945D1EFC028A000E013D /* AwesomeQuotes.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2F05945E1EFC028A000E013D /* AwesomeQuotes.xcdatamodel */,
-			);
-			currentVersion = 2F05945E1EFC028A000E013D /* AwesomeQuotes.xcdatamodel */;
-			path = AwesomeQuotes.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2F05944B1EFC028A000E013D /* Project object */;
 }
