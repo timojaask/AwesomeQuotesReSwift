@@ -14,6 +14,14 @@
 		2F0594641EFC028A000E013D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594621EFC028A000E013D /* LaunchScreen.storyboard */; };
 		2F05946F1EFC028A000E013D /* AwesomeQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05946E1EFC028A000E013D /* AwesomeQuotesTests.swift */; };
 		2F05947A1EFC028A000E013D /* AwesomeQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0594791EFC028A000E013D /* AwesomeQuotesUITests.swift */; };
+		2F0BEFF41EFECD4E00775B7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF31EFECD4E00775B7A /* AppState.swift */; };
+		2F0BEFF71EFECD9B00775B7A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */; };
+		2F0BEFF91EFEDCA300775B7A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF81EFEDCA300775B7A /* Actions.swift */; };
+		2F0BEFFB1EFEDDA300775B7A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFFA1EFEDDA300775B7A /* Quote.swift */; };
+		2F0BEFFD1EFEF10400775B7A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFFC1EFEF10400775B7A /* BaseViewController.swift */; };
+		2F0BEFFF1EFEF13D00775B7A /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */; };
+		2F0BF0011EFEF18D00775B7A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0001EFEF18D00775B7A /* CustomButton.swift */; };
+		2F0BF0031EFEF1B200775B7A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0021EFEF1B200775B7A /* RootView.swift */; };
 		32938918800CEB201E3BF859 /* Pods_AwesomeQuotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C0670999706ECA21318B27 /* Pods_AwesomeQuotesUITests.framework */; };
 		E72332094DD6110881EEB44A /* Pods_AwesomeQuotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76CA0B28256A5539A80FE08 /* Pods_AwesomeQuotes.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +58,14 @@
 		2F0594751EFC028A000E013D /* AwesomeQuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeQuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0594791EFC028A000E013D /* AwesomeQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeQuotesUITests.swift; sourceTree = "<group>"; };
 		2F05947B1EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0BEFF31EFECD4E00775B7A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = State/AppState.swift; sourceTree = "<group>"; };
+		2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = Reducers/AppReducer.swift; sourceTree = "<group>"; };
+		2F0BEFF81EFEDCA300775B7A /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		2F0BEFFA1EFEDDA300775B7A /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		2F0BEFFC1EFEF10400775B7A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		2F0BF0001EFEF18D00775B7A /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		2F0BF0021EFEF1B200775B7A /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		537BC2DB8E99E4166694BDA6 /* Pods-AwesomeQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75EB72EC3AEB32636978200C /* Pods-AwesomeQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DBD03E1AD05D99635B2E9DD /* Pods-AwesomeQuotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesUITests/Pods-AwesomeQuotesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +129,15 @@
 			isa = PBXGroup;
 			children = (
 				2F0594561EFC028A000E013D /* AppDelegate.swift */,
+				2F0BEFFC1EFEF10400775B7A /* BaseViewController.swift */,
+				2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */,
 				2F0594581EFC028A000E013D /* RootViewController.swift */,
+				2F0BF0021EFEF1B200775B7A /* RootView.swift */,
+				2F0BEFFA1EFEDDA300775B7A /* Quote.swift */,
+				2F0BEFF81EFEDCA300775B7A /* Actions.swift */,
+				2F0BF0001EFEF18D00775B7A /* CustomButton.swift */,
+				2F0BEFF21EFECD3700775B7A /* State */,
+				2F0BEFF51EFECD7300775B7A /* Reducers */,
 				2F0594601EFC028A000E013D /* Assets.xcassets */,
 				2F0594621EFC028A000E013D /* LaunchScreen.storyboard */,
 				2F0594651EFC028A000E013D /* Info.plist */,
@@ -137,6 +161,22 @@
 				2F05947B1EFC028A000E013D /* Info.plist */,
 			);
 			path = AwesomeQuotesUITests;
+			sourceTree = "<group>";
+		};
+		2F0BEFF21EFECD3700775B7A /* State */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BEFF31EFECD4E00775B7A /* AppState.swift */,
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		2F0BEFF51EFECD7300775B7A /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */,
+			);
+			name = Reducers;
 			sourceTree = "<group>";
 		};
 		4C6D9CDCEB1B76B5BBD40157 /* Pods */ = {
@@ -445,8 +485,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0BEFF91EFEDCA300775B7A /* Actions.swift in Sources */,
 				2F0594591EFC028A000E013D /* RootViewController.swift in Sources */,
+				2F0BF0011EFEF18D00775B7A /* CustomButton.swift in Sources */,
 				2F0594571EFC028A000E013D /* AppDelegate.swift in Sources */,
+				2F0BF0031EFEF1B200775B7A /* RootView.swift in Sources */,
+				2F0BEFF71EFECD9B00775B7A /* AppReducer.swift in Sources */,
+				2F0BEFFB1EFEDDA300775B7A /* Quote.swift in Sources */,
+				2F0BEFFD1EFEF10400775B7A /* BaseViewController.swift in Sources */,
+				2F0BEFFF1EFEF13D00775B7A /* RootViewModel.swift in Sources */,
+				2F0BEFF41EFECD4E00775B7A /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

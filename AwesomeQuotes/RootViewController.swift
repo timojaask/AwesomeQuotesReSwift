@@ -1,29 +1,34 @@
 import UIKit
 import Cartography
+import ReSwift
 
-class RootViewController: UIViewController {
-    let containerView = UIView()
-    let label = UILabel()
+class RootViewController: BaseViewController {
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        containerView.backgroundColor = UIColor.white
-        containerView.translatesAutoresizingMaskIntoConstraints = true
+    var rootView: RootView!
 
-        label.text = "Testing 1, 2, 3"
-        containerView.addSubview(label)
+    override init(store: MainStore) {
+        super.init(store: store)
 
-        constrain(containerView, label) { (containerView, label) in
-            label.center == containerView.center
-        }
+        rootView = RootView(
+            nextQuoteHandler: { [weak self] in self?.nextQuote() },
+            favoriteQuoteHandler: { [weak self] in self?.favoriteQuote() }
+        )
+        self.view = rootView
+    }
+
+    func nextQuote() {
+        store.dispatch(NextQuote())
+    }
+
+    func favoriteQuote() {
+        store.dispatch(ToggleFavoriteForCurrentQuote())
+    }
+
+    override func newState(state: AppState) {
+        rootView.updateView(viewModel: RootViewModel(state: state))
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func loadView() {
-        self.view = containerView
-    }
 }
-

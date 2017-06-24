@@ -7,6 +7,7 @@ target 'AwesomeQuotes' do
 
   # Pods for AwesomeQuotes
   pod 'Cartography'
+  pod 'ReSwift'
 
   target 'AwesomeQuotesTests' do
     inherit! :search_paths
