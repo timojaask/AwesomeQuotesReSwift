@@ -11,7 +11,10 @@ target 'AwesomeQuotes' do
 
   target 'AwesomeQuotesTests' do
     inherit! :search_paths
+    
     # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'AwesomeQuotesUITests' do

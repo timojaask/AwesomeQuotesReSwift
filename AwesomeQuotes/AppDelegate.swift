@@ -1,8 +1,6 @@
 import UIKit
 import ReSwift
 
-typealias MainStore = Store<AppState>
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

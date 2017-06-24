@@ -1,15 +1,21 @@
 PODS:
   - Cartography (1.1.0)
+  - Nimble (7.0.1)
+  - Quick (1.1.0)
   - ReSwift (4.0.0)
 
 DEPENDENCIES:
   - Cartography
+  - Nimble
+  - Quick
   - ReSwift
 
 SPEC CHECKSUMS:
   Cartography: '0538ccb4044acbbda2266335fc58cb4228794d90'
+  Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
 
-PODFILE CHECKSUM: f971d54fa281a19bfeb26050631ce35389f2b57e
+PODFILE CHECKSUM: fbc27b8b0d26bcd75407ff0fd88130c40db0dde5
 
 COCOAPODS: 1.2.1

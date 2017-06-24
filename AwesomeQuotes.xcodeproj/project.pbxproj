@@ -12,8 +12,7 @@
 		2F0594591EFC028A000E013D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0594581EFC028A000E013D /* RootViewController.swift */; };
 		2F0594611EFC028A000E013D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594601EFC028A000E013D /* Assets.xcassets */; };
 		2F0594641EFC028A000E013D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594621EFC028A000E013D /* LaunchScreen.storyboard */; };
-		2F05946F1EFC028A000E013D /* AwesomeQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05946E1EFC028A000E013D /* AwesomeQuotesTests.swift */; };
-		2F05947A1EFC028A000E013D /* AwesomeQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0594791EFC028A000E013D /* AwesomeQuotesUITests.swift */; };
+		2F05946F1EFC028A000E013D /* RootViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05946E1EFC028A000E013D /* RootViewModelSpec.swift */; };
 		2F0BEFF41EFECD4E00775B7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF31EFECD4E00775B7A /* AppState.swift */; };
 		2F0BEFF71EFECD9B00775B7A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */; };
 		2F0BEFF91EFEDCA300775B7A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF81EFEDCA300775B7A /* Actions.swift */; };
@@ -22,6 +21,18 @@
 		2F0BEFFF1EFEF13D00775B7A /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */; };
 		2F0BF0011EFEF18D00775B7A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0001EFEF18D00775B7A /* CustomButton.swift */; };
 		2F0BF0031EFEF1B200775B7A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0021EFEF1B200775B7A /* RootView.swift */; };
+		2F0BF0041EFEFB5500775B7A /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */; };
+		2F0BF0051EFEFB9300775B7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF31EFECD4E00775B7A /* AppState.swift */; };
+		2F0BF0061EFEFBF100775B7A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFFA1EFEDDA300775B7A /* Quote.swift */; };
+		2F0BF0081EFEFC7B00775B7A /* AwesomeQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0071EFEFC7B00775B7A /* AwesomeQuotesUITests.swift */; };
+		2F0BF00D1EFF06BA00775B7A /* RandomStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */; };
+		2F0BF00F1EFF06CD00775B7A /* AppReducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF00E1EFF06CD00775B7A /* AppReducerSpec.swift */; };
+		2F0BF0111EFF082400775B7A /* FakeObjectInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */; };
+		2F0BF0121EFF087800775B7A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */; };
+		2F0BF0131EFF088900775B7A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF81EFEDCA300775B7A /* Actions.swift */; };
+		2F0BF0151EFF091300775B7A /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0141EFF091300775B7A /* MainStore.swift */; };
+		2F0BF0161EFF092500775B7A /* MainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0141EFF091300775B7A /* MainStore.swift */; };
+		2F0BF0181EFF0BD900775B7A /* EquatableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */; };
 		32938918800CEB201E3BF859 /* Pods_AwesomeQuotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C0670999706ECA21318B27 /* Pods_AwesomeQuotesUITests.framework */; };
 		E72332094DD6110881EEB44A /* Pods_AwesomeQuotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76CA0B28256A5539A80FE08 /* Pods_AwesomeQuotes.framework */; };
 /* End PBXBuildFile section */
@@ -53,10 +64,9 @@
 		2F0594631EFC028A000E013D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F0594651EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F05946A1EFC028A000E013D /* AwesomeQuotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeQuotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F05946E1EFC028A000E013D /* AwesomeQuotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeQuotesTests.swift; sourceTree = "<group>"; };
+		2F05946E1EFC028A000E013D /* RootViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelSpec.swift; sourceTree = "<group>"; };
 		2F0594701EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F0594751EFC028A000E013D /* AwesomeQuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeQuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F0594791EFC028A000E013D /* AwesomeQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeQuotesUITests.swift; sourceTree = "<group>"; };
 		2F05947B1EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F0BEFF31EFECD4E00775B7A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = State/AppState.swift; sourceTree = "<group>"; };
 		2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = Reducers/AppReducer.swift; sourceTree = "<group>"; };
@@ -66,6 +76,12 @@
 		2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		2F0BF0001EFEF18D00775B7A /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2F0BF0021EFEF1B200775B7A /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		2F0BF0071EFEFC7B00775B7A /* AwesomeQuotesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeQuotesUITests.swift; sourceTree = "<group>"; };
+		2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomStringExtension.swift; path = Utilities/RandomStringExtension.swift; sourceTree = "<group>"; };
+		2F0BF00E1EFF06CD00775B7A /* AppReducerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducerSpec.swift; sourceTree = "<group>"; };
+		2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeObjectInitializers.swift; sourceTree = "<group>"; };
+		2F0BF0141EFF091300775B7A /* MainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
+		2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableExtensions.swift; sourceTree = "<group>"; };
 		537BC2DB8E99E4166694BDA6 /* Pods-AwesomeQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75EB72EC3AEB32636978200C /* Pods-AwesomeQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DBD03E1AD05D99635B2E9DD /* Pods-AwesomeQuotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesUITests/Pods-AwesomeQuotesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +152,7 @@
 				2F0BEFFA1EFEDDA300775B7A /* Quote.swift */,
 				2F0BEFF81EFEDCA300775B7A /* Actions.swift */,
 				2F0BF0001EFEF18D00775B7A /* CustomButton.swift */,
+				2F0BF0141EFF091300775B7A /* MainStore.swift */,
 				2F0BEFF21EFECD3700775B7A /* State */,
 				2F0BEFF51EFECD7300775B7A /* Reducers */,
 				2F0594601EFC028A000E013D /* Assets.xcassets */,
@@ -148,8 +165,11 @@
 		2F05946D1EFC028A000E013D /* AwesomeQuotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F05946E1EFC028A000E013D /* AwesomeQuotesTests.swift */,
+				2F05946E1EFC028A000E013D /* RootViewModelSpec.swift */,
+				2F0BF00E1EFF06CD00775B7A /* AppReducerSpec.swift */,
+				2F0BF00B1EFF069300775B7A /* Utilities */,
 				2F0594701EFC028A000E013D /* Info.plist */,
+				2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */,
 			);
 			path = AwesomeQuotesTests;
 			sourceTree = "<group>";
@@ -157,7 +177,7 @@
 		2F0594781EFC028A000E013D /* AwesomeQuotesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2F0594791EFC028A000E013D /* AwesomeQuotesUITests.swift */,
+				2F0BF0071EFEFC7B00775B7A /* AwesomeQuotesUITests.swift */,
 				2F05947B1EFC028A000E013D /* Info.plist */,
 			);
 			path = AwesomeQuotesUITests;
@@ -177,6 +197,15 @@
 				2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */,
 			);
 			name = Reducers;
+			sourceTree = "<group>";
+		};
+		2F0BF00B1EFF069300775B7A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */,
+				2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		4C6D9CDCEB1B76B5BBD40157 /* Pods */ = {
@@ -291,6 +320,7 @@
 					2F0594741EFC028A000E013D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6W4GZQ5Z99;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2F0594521EFC028A000E013D;
 					};
@@ -493,6 +523,7 @@
 				2F0BEFF71EFECD9B00775B7A /* AppReducer.swift in Sources */,
 				2F0BEFFB1EFEDDA300775B7A /* Quote.swift in Sources */,
 				2F0BEFFD1EFEF10400775B7A /* BaseViewController.swift in Sources */,
+				2F0BF0151EFF091300775B7A /* MainStore.swift in Sources */,
 				2F0BEFFF1EFEF13D00775B7A /* RootViewModel.swift in Sources */,
 				2F0BEFF41EFECD4E00775B7A /* AppState.swift in Sources */,
 			);
@@ -502,7 +533,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F05946F1EFC028A000E013D /* AwesomeQuotesTests.swift in Sources */,
+				2F0BF00D1EFF06BA00775B7A /* RandomStringExtension.swift in Sources */,
+				2F0BF0061EFEFBF100775B7A /* Quote.swift in Sources */,
+				2F0BF0051EFEFB9300775B7A /* AppState.swift in Sources */,
+				2F0BF00F1EFF06CD00775B7A /* AppReducerSpec.swift in Sources */,
+				2F0BF0041EFEFB5500775B7A /* RootViewModel.swift in Sources */,
+				2F0BF0181EFF0BD900775B7A /* EquatableExtensions.swift in Sources */,
+				2F0BF0111EFF082400775B7A /* FakeObjectInitializers.swift in Sources */,
+				2F0BF0161EFF092500775B7A /* MainStore.swift in Sources */,
+				2F0BF0131EFF088900775B7A /* Actions.swift in Sources */,
+				2F0BF0121EFF087800775B7A /* AppReducer.swift in Sources */,
+				2F05946F1EFC028A000E013D /* RootViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F05947A1EFC028A000E013D /* AwesomeQuotesUITests.swift in Sources */,
+				2F0BF0081EFEFC7B00775B7A /* AwesomeQuotesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 537BC2DB8E99E4166694BDA6 /* Pods-AwesomeQuotesTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6W4GZQ5Z99;
 				INFOPLIST_FILE = AwesomeQuotesTests/Info.plist;
@@ -684,7 +725,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75EB72EC3AEB32636978200C /* Pods-AwesomeQuotesTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 6W4GZQ5Z99;
 				INFOPLIST_FILE = AwesomeQuotesTests/Info.plist;
@@ -701,11 +742,13 @@
 			baseConfigurationReference = E62469C2F4AC0C036E577092 /* Pods-AwesomeQuotesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6W4GZQ5Z99;
 				INFOPLIST_FILE = AwesomeQuotesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.timojaask.AwesomeQuotesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AwesomeQuotes;
 			};
@@ -716,6 +759,7 @@
 			baseConfigurationReference = 8DBD03E1AD05D99635B2E9DD /* Pods-AwesomeQuotesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6W4GZQ5Z99;
 				INFOPLIST_FILE = AwesomeQuotesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
