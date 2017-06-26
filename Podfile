@@ -14,7 +14,7 @@ target 'AwesomeQuotes' do
     
     # Pods for testing
     pod 'Quick'
-    pod 'Nimble'
+    pod 'Nimble', :inhibit_warnings => true
   end
 
   target 'AwesomeQuotesUITests' do
