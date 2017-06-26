@@ -80,6 +80,19 @@ class AppReducerSpec: QuickSpec {
             }
         }
 
+        describe("Fetching quotes") {
+
+            it("sets fetching quotes to the same value as passed in the action parameter") {
+                let stateBefore = stateWithQuotes()
+                let stateInBetween = appReducer(action: SetFetchingQuotes(fetching: true), state: stateBefore)
+                let stateAfter = appReducer(action: SetFetchingQuotes(fetching: false), state: stateInBetween)
+
+                expect(stateBefore.fetchingQuotes).to(equal(false))
+                expect(stateInBetween.fetchingQuotes).to(equal(true))
+                expect(stateAfter.fetchingQuotes).to(equal(false))
+            }
+        }
+
         describe("Toggle favorite for current quote") {
 
             it("sets favorite to true for current quote when quote is not favorite") {
