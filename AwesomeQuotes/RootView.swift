@@ -51,7 +51,7 @@ class RootView: UIView {
         isFavoriteLabel.text = viewModel.isFavoriteLabelText
         nextQuoteButton.isHidden = viewModel.nextQuoteButtonHidden
         favoriteButton.isHidden = viewModel.favoriteButtonHidden
-        favoriteButton.titleLabel?.text = viewModel.favoriteButtonTitle
+        favoriteButton.setTitle(viewModel.favoriteButtonTitle, for: .normal)
     }
 
     func nextQuoteButtonTapped() {
