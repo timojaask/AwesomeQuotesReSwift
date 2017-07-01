@@ -12,7 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController(store: store)
         window?.makeKeyAndVisible()
-        asyncRequestHandler = AsyncRequestHandler(quotesService: RemoteQuotesService(), store: store)
+        let quotesService = RemoteQuotesService(networkService: AppNetworkService())
+        asyncRequestHandler = AsyncRequestHandler(quotesService: quotesService, store: store)
         store.subscribe(asyncRequestHandler!)
         store.dispatch(FetchQuotes(.request))
         return true

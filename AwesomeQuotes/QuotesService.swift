@@ -1,6 +1,5 @@
 import Foundation
 import PromiseKit
-import Alamofire
 
 let url = "https://jsonblob.com/api/jsonBlob/9ab95547-5a75-11e7-ae4c-9f9f5af9ecc0"
 
@@ -8,23 +7,25 @@ protocol QuotesService {
     func getQuotes() -> Promise<[Quote]>
 }
 
-func convertJsonToQuotes(_ json: Any) throws -> [Quote] {
-    guard let jsonArray = json as? [Any] else {
-        throw QuotesServiceError.JsonParsingError
-    }
-    return try jsonArray.map(Quote.fromJson)
-}
-
 enum QuotesServiceError: Error {
     case JsonParsingError
 }
 
 struct RemoteQuotesService: QuotesService {
+    let networkService: NetworkService
+
     func getQuotes() -> Promise<[Quote]> {
-        return Alamofire.request(url)
-            .responseJSON()
+        return networkService.fetchJson(url)
             .then(execute: convertJsonToQuotes)
     }
+}
+
+func convertJsonToQuotes(_ json: Any) throws -> [Quote] {
+    guard let jsonArray = json as? [Any] else {
+        throw QuotesServiceError.JsonParsingError
+    }
+    let result = try jsonArray.map(Quote.fromJson)
+    return result
 }
 
 extension Quote {
