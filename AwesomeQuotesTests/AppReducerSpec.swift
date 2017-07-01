@@ -3,7 +3,7 @@ import Nimble
 
 class AppReducerSpec: QuickSpec {
     override func spec() {
-        describe("Next quote action") {
+        describe("Next quote") {
 
             it("increments current quote index") {
                 let stateBefore = stateWithQuotes()
@@ -39,57 +39,37 @@ class AppReducerSpec: QuickSpec {
             }
         }
 
-        describe("Set quotes action") {
+        describe("Fetch quotes") {
 
-            it("replaces old quotes with new ones") {
-                let newQuotes = anotherSetOfQuotes()
+            it("sets fetchQuotesState to request") {
                 let stateBefore = stateWithQuotes()
-                let stateAfter = appReducer(
-                    action: SetQuotes(quotes: newQuotes),
-                    state: stateBefore)
+                let stateAfter = appReducer(action: FetchQuotes(.request), state: stateBefore)
 
-                expect(stateBefore.quotes).toNot(equal(stateAfter.quotes))
-                expect(stateAfter.quotes).to(equal(newQuotes))
+                expect(stateBefore.fetchQuotesState).to(equal(FetchQuotesState.none))
+                expect(stateAfter.fetchQuotesState).to(equal(FetchQuotesState.request))
             }
 
-            it("sets current quote to first quote if there were previously no quotes") {
-                let newQuotes = anotherSetOfQuotes()
-                let stateBefore = stateWithNoQuotes()
-                let stateAfter = appReducer(
-                    action: SetQuotes(quotes: newQuotes),
-                    state: stateBefore)
+            it("sets fetchQuotesState to success with fetched quotes array") {
+                let fetchedQuotes = defaultSetOfQuotes()
 
-                expect(stateBefore.currentQuoteIndex).to(equal(-1))
-                expect(stateBefore.currentQuote).to(beNil())
-
-                expect(stateAfter.currentQuoteIndex).to(equal(0))
-                expect(stateAfter.currentQuote).to(equal(newQuotes[0]))
-            }
-
-            it("should not change current quote if there were quotes already") {
-                let newQuotes = anotherSetOfQuotes()
-                let stateBefore = stateWithQuotes(selectFavoriteQuote: true)
-                let stateAfter = appReducer(
-                    action: SetQuotes(quotes: newQuotes),
-                    state: stateBefore)
-
-                expect(stateBefore.currentQuoteIndex).to(equal(favoriteQuoteIndexInDefaultSet))
-
-                expect(stateAfter.currentQuoteIndex).to(equal(stateBefore.currentQuoteIndex))
-                expect(stateAfter.currentQuote).to(equal(stateBefore.currentQuote))
-            }
-        }
-
-        describe("Fetching quotes") {
-
-            it("sets fetching quotes to the same value as passed in the action parameter") {
                 let stateBefore = stateWithQuotes()
-                let stateInBetween = appReducer(action: SetFetchingQuotes(fetching: true), state: stateBefore)
-                let stateAfter = appReducer(action: SetFetchingQuotes(fetching: false), state: stateInBetween)
+                let stateAfter = appReducer(action: FetchQuotes(.success(quotes: fetchedQuotes)), state: stateBefore)
 
-                expect(stateBefore.fetchingQuotes).to(equal(false))
-                expect(stateInBetween.fetchingQuotes).to(equal(true))
-                expect(stateAfter.fetchingQuotes).to(equal(false))
+                expect(stateBefore.fetchQuotesState).to(equal(FetchQuotesState.none))
+                expect(stateAfter.fetchQuotesState).to(equal(FetchQuotesState.success(quotes: fetchedQuotes)))
+            }
+
+            it("sets fetchedQuotesState to error") {
+                enum TestError: Error {
+                    case someOtherError
+                    case someError
+                }
+
+                let stateBefore = stateWithQuotes()
+                let stateAfter = appReducer(action: FetchQuotes(.error(error: TestError.someError)), state: stateBefore)
+
+                expect(stateBefore.fetchQuotesState).to(equal(FetchQuotesState.none))
+                expect(stateAfter.fetchQuotesState).to(equal(FetchQuotesState.error(error: TestError.someError)))
             }
         }
 

@@ -1,21 +1,34 @@
 PODS:
   - Cartography (1.1.0)
   - Nimble (7.0.1)
+  - PromiseKit (4.2.2):
+    - PromiseKit/Foundation (= 4.2.2)
+    - PromiseKit/QuartzCore (= 4.2.2)
+    - PromiseKit/UIKit (= 4.2.2)
+  - PromiseKit/CorePromise (4.2.2)
+  - PromiseKit/Foundation (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.2):
+    - PromiseKit/CorePromise
   - Quick (1.1.0)
   - ReSwift (4.0.0)
 
 DEPENDENCIES:
   - Cartography
   - Nimble
+  - PromiseKit (~> 4.0)
   - Quick
   - ReSwift
 
 SPEC CHECKSUMS:
   Cartography: '0538ccb4044acbbda2266335fc58cb4228794d90'
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
+  PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
 
-PODFILE CHECKSUM: 268cee9a3172b6817bb821c021ee79fd0f7a73d6
+PODFILE CHECKSUM: 5ecb3d7120c7a609d1ab7f9d8b6261defea89b95
 
 COCOAPODS: 1.2.1

@@ -38,7 +38,7 @@ func stateWithQuotes(selectFavoriteQuote: Bool = false) -> AppState {
         quotes: quotes,
         currentQuoteIndex: currentQuoteIndex,
         currentQuote: currentQuote,
-        fetchingQuotes: false)
+        fetchQuotesState: .none)
 }
 
 func viewModelWithNoQuotes() -> RootViewModel {
