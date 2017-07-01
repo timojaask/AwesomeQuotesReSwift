@@ -8,7 +8,9 @@ target 'AwesomeQuotes' do
   # Pods for AwesomeQuotes
   pod 'Cartography'
   pod 'ReSwift'
+  pod 'Alamofire', '~> 4.4'
   pod "PromiseKit", "~> 4.0"
+  pod 'PromiseKit/Alamofire', '~> 4.0'
 
   target 'AwesomeQuotesTests' do
     inherit! :search_paths
