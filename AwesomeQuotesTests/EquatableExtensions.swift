@@ -40,7 +40,6 @@ func ==(lhs: FetchQuotes, rhs: FetchQuotes) -> Bool {
     return lhs.state == rhs.state
 }
 
-
 extension Error where Self: Equatable {
 
 }

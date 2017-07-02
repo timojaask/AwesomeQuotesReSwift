@@ -27,9 +27,3 @@ struct TestNetworkService: NetworkService {
         return Promise.init(value: json)
     }
 }
-
-extension Array where Element == Quote {
-    func toJson() -> Any {
-        return self.map {[ "text": $0.text, "author": $0.author ]}
-    }
-}

@@ -7,37 +7,11 @@ protocol QuotesService {
     func getQuotes() -> Promise<[Quote]>
 }
 
-enum QuotesServiceError: Error {
-    case JsonParsingError
-}
-
 struct RemoteQuotesService: QuotesService {
     let networkService: NetworkService
 
     func getQuotes() -> Promise<[Quote]> {
         return networkService.fetchJson(url)
-            .then(execute: convertJsonToQuotes)
-    }
-}
-
-func convertJsonToQuotes(_ json: Any) throws -> [Quote] {
-    guard let jsonArray = json as? [Any] else {
-        throw QuotesServiceError.JsonParsingError
-    }
-    return try jsonArray.map(Quote.fromJson)
-}
-
-extension Quote {
-    static func fromJson(json: Any) throws -> Quote {
-        guard let jsonDictionary = json as? [String: String] else {
-            throw QuotesServiceError.JsonParsingError
-        }
-        guard let text = jsonDictionary["text"] else {
-            throw QuotesServiceError.JsonParsingError
-        }
-        guard let author = jsonDictionary["author"] else {
-            throw QuotesServiceError.JsonParsingError
-        }
-        return Quote(text: text, author: author)
+            .then(execute: jsonToQuotes)
     }
 }
