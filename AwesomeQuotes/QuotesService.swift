@@ -24,8 +24,7 @@ func convertJsonToQuotes(_ json: Any) throws -> [Quote] {
     guard let jsonArray = json as? [Any] else {
         throw QuotesServiceError.JsonParsingError
     }
-    let result = try jsonArray.map(Quote.fromJson)
-    return result
+    return try jsonArray.map(Quote.fromJson)
 }
 
 extension Quote {

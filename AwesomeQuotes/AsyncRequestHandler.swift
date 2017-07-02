@@ -13,12 +13,8 @@ class AsyncRequestHandler: StoreSubscriber {
     func newState(state: AppState) {
         if case FetchQuotesState.request = state.fetchQuotesState {
             quotesService.getQuotes()
-                .then { quotes -> () in
-                    self.store.dispatch(FetchQuotes(.success(quotes: quotes)))
-                }
-                .catch { error in
-                    self.store.dispatch(FetchQuotes(.error(error: error)))
-            }
+                .then { self.store.dispatch(FetchQuotes(.success(quotes: $0))) }
+                .catch { self.store.dispatch(FetchQuotes(.error(error: $0))) }
         }
     }
 }
