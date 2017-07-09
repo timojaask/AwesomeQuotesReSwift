@@ -34,7 +34,6 @@ class AppStateCodable: NSObject, NSCoding {
     }
 }
 
-// TODO: Unit tests
 class QuoteCodable: NSObject, NSCoding {
     let text: String
     let author: String
