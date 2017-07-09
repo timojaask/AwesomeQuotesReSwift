@@ -109,5 +109,38 @@ class FileStorageSpec: QuickSpec {
                 expect(actual).to(equal(expected))
             }
         }
+
+        describe("FileStorage") { 
+            // This is an integration test that doesn't try to mock out the actual file system I/O
+
+            it("Writing and reading AppState to FileStorage preserves all properties") {
+                let quotes = defaultSetOfQuotes()
+                let currentQuoteIndex = 1
+                let currentQuote = quotes[currentQuoteIndex]
+                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex, currentQuote: currentQuote, fetchQuotesState: .none)
+
+                var actual: AppState?
+
+                let fileStorage = FileStorage()
+
+                func handleError(error: Error) {
+                    fail("loadState failed with error: \(error.localizedDescription)")
+                }
+
+                func loadState() {
+                    FileStorage.loadState()
+                        .then { appState -> Void in
+                            actual = appState
+                        }
+                        .catch(execute: handleError)
+                }
+
+                fileStorage.saveState(state: expected)
+                    .then(execute: loadState)
+                    .catch(execute: handleError)
+
+                expect(actual).toEventually(equal(expected), timeout: 1)
+            }
+        }
     }
 }
