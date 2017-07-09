@@ -16,8 +16,8 @@ func appReducer (action: Action, state: AppState?) -> AppState {
 
     case let action as FetchQuotes:
         state.fetchQuotesState = action.state
-        if case let FetchQuotesState.success(quotes) = action.state {
-            state.quotes = quotes
+        if case let .success(quotes) = action.state {
+            state.quotes = mergeFetchedQuotes(remoteQuotes: quotes, localQuotes: state.quotes)
             if state.currentQuoteIndex < 0 && state.quotes.count > 0 {
                 state.currentQuoteIndex = 0
                 state.currentQuote = state.quotes[state.currentQuoteIndex]
@@ -35,4 +35,19 @@ func appReducer (action: Action, state: AppState?) -> AppState {
         break
     }
     return state
+}
+
+// TODO: Unit test
+func mergeFetchedQuotes(remoteQuotes: [Quote], localQuotes: [Quote]) -> [Quote] {
+    let localFavorites = localQuotes.filter { $0.isFavorite }
+    let localQuotesToAdd = localFavorites.reduce([]) { (soFar, localFavoriteQuote) -> [Quote] in
+        return remoteQuotes.contains(where: { $0.text == localFavoriteQuote.text }) ?
+            soFar + [localFavoriteQuote] :
+            soFar
+    }
+    let remoteQuotesWithFavorites = remoteQuotes.map { remoteQuote -> Quote in
+        let localQuote = localFavorites.filter({ $0.text == remoteQuote.text }).first
+        return localQuote ?? remoteQuote
+    }
+    return remoteQuotesWithFavorites + localQuotesToAdd
 }

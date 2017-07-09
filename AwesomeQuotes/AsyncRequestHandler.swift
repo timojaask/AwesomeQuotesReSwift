@@ -11,7 +11,7 @@ class AsyncRequestHandler: StoreSubscriber {
     }
 
     func newState(state: AppState) {
-        if case FetchQuotesState.request = state.fetchQuotesState {
+        if case .request = state.fetchQuotesState {
             quotesService.getQuotes()
                 .then { self.store.dispatch(FetchQuotes(.success(quotes: $0))) }
                 .catch { self.store.dispatch(FetchQuotes(.error(error: $0))) }

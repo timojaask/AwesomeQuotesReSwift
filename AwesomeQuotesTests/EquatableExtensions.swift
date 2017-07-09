@@ -1,6 +1,6 @@
 import Foundation
 
-extension AppState: Equatable { }
+extension AppState: Equatable {}
 func ==(lhs: AppState, rhs: AppState) -> Bool {
     return
         lhs.currentQuoteIndex == rhs.currentQuoteIndex &&
@@ -10,7 +10,7 @@ func ==(lhs: AppState, rhs: AppState) -> Bool {
 
 }
 
-extension Quote: Equatable { }
+extension Quote: Equatable {}
 func ==(lhs: Quote, rhs: Quote) -> Bool {
     return
         lhs.author == rhs.author &&
@@ -19,7 +19,6 @@ func ==(lhs: Quote, rhs: Quote) -> Bool {
 }
 
 extension FetchQuotesState: Equatable { }
-
 func ==(lhs: FetchQuotesState, rhs: FetchQuotesState) -> Bool {
     switch (lhs, rhs) {
     case (.none, .none):
@@ -40,11 +39,10 @@ func ==(lhs: FetchQuotes, rhs: FetchQuotes) -> Bool {
     return lhs.state == rhs.state
 }
 
-extension Error where Self: Equatable {
-
-}
-
+extension Error where Self: Equatable {}
 func ==(lhs: Error, rhs: Error) -> Bool {
     return lhs.localizedDescription == rhs.localizedDescription &&
         lhs.isCancelledError == rhs.isCancelledError
 }
+
+
