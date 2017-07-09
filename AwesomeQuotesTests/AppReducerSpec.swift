@@ -91,5 +91,50 @@ class AppReducerSpec: QuickSpec {
                 expect(stateAfter.currentQuote?.isFavorite).to(equal(false))
             }
         }
+
+        describe("mergeFetchedQuotes") { 
+            it("includes remoteQuotes when localQuotes is empty") {
+                let remoteQuotes = remoteSetOfQuotes()
+                let localQuotes: [Quote] = []
+                let expected = remoteQuotes
+
+                let actual = mergeFetchedQuotes(remoteQuotes: remoteQuotes, localQuotes: localQuotes)
+
+                expect(actual).to(equal(expected))
+            }
+
+            it("does not include localQuotes that are not in remoteQuotes and are not favorite") {
+                let remoteQuotes = remoteSetOfQuotes()
+                let localQuotes = [randomQuote(), randomQuote()]
+                let expected = remoteQuotes
+
+                let actual = mergeFetchedQuotes(remoteQuotes: remoteQuotes, localQuotes: localQuotes)
+
+                expect(actual).to(equal(expected))
+            }
+
+            it("includes localQuotes that are not in remoteQuotes and are favorite") {
+                let remoteQuotes = remoteSetOfQuotes()
+                let favoriteQuotes = [randomQuote(isFavorite: true), randomQuote(isFavorite: true)]
+                let localQuotes = [randomQuote(), randomQuote()] + favoriteQuotes
+                let expected = remoteQuotes + favoriteQuotes
+
+                let actual = mergeFetchedQuotes(remoteQuotes: remoteQuotes, localQuotes: localQuotes)
+
+                expect(actual).to(equal(expected))
+            }
+
+            it("includes isFavorite flag from localQuotes") {
+                let remoteQuotes = remoteSetOfQuotes(number: 4)
+                let favoriteQuotes = [remoteQuotes[0], remoteQuotes[1]].map { Quote(text: $0.text, author: $0.author, isFavorite: true)
+                }
+                let localQuotes = favoriteQuotes + [randomQuote()]
+                let expected = favoriteQuotes + [remoteQuotes[2], remoteQuotes[3]]
+
+                let actual = mergeFetchedQuotes(remoteQuotes: remoteQuotes, localQuotes: localQuotes)
+
+                expect(actual).to(equal(expected))
+            }
+        }
     }
 }

@@ -37,17 +37,22 @@ func appReducer (action: Action, state: AppState?) -> AppState {
     return state
 }
 
-// TODO: Unit test
 func mergeFetchedQuotes(remoteQuotes: [Quote], localQuotes: [Quote]) -> [Quote] {
     let localFavorites = localQuotes.filter { $0.isFavorite }
-    let localQuotesToAdd = localFavorites.reduce([]) { (soFar, localFavoriteQuote) -> [Quote] in
+    return remoteQuotesWithFavoriteFlagsMerged(remoteQuotes: remoteQuotes, localFavorites: localFavorites) +
+        localQuotesToAdd(remoteQuotes: remoteQuotes, localFavorites: localFavorites)
+}
+
+func localQuotesToAdd(remoteQuotes: [Quote], localFavorites: [Quote]) -> [Quote] {
+    return localFavorites.reduce([]) { (soFar, localFavoriteQuote) -> [Quote] in
         return remoteQuotes.contains(where: { $0.text == localFavoriteQuote.text }) ?
-            soFar + [localFavoriteQuote] :
-            soFar
+            soFar : soFar + [localFavoriteQuote]
     }
-    let remoteQuotesWithFavorites = remoteQuotes.map { remoteQuote -> Quote in
+}
+
+func remoteQuotesWithFavoriteFlagsMerged(remoteQuotes: [Quote], localFavorites: [Quote]) -> [Quote] {
+    return remoteQuotes.map { remoteQuote -> Quote in
         let localQuote = localFavorites.filter({ $0.text == remoteQuote.text }).first
         return localQuote ?? remoteQuote
     }
-    return remoteQuotesWithFavorites + localQuotesToAdd
 }
