@@ -44,6 +44,10 @@
 		2FAFA1981F088B870031FF15 /* JsonSerializationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1971F088B870031FF15 /* JsonSerializationSpec.swift */; };
 		2FAFA1991F088CBD0031FF15 /* JsonSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1951F088B680031FF15 /* JsonSerialization.swift */; };
 		2FC164871F126175004DCF00 /* ResponseJsonSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC164861F126175004DCF00 /* ResponseJsonSerialization.swift */; };
+		2FC1648A1F127BAD004DCF00 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1931F0889D10031FF15 /* LocalStorage.swift */; };
+		2FC1648C1F127C0B004DCF00 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1648B1F127C0B004DCF00 /* FileStorage.swift */; };
+		2FC1648D1F127C0F004DCF00 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1648B1F127C0B004DCF00 /* FileStorage.swift */; };
+		2FC1648F1F127C46004DCF00 /* FileStorageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */; };
 		2FDEADE11F0425800047A8E9 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEADE01F0425800047A8E9 /* AsyncRequestHandler.swift */; };
 		2FDEADE21F04259B0047A8E9 /* AsyncRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEADE01F0425800047A8E9 /* AsyncRequestHandler.swift */; };
 		2FDEADE41F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEADE31F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift */; };
@@ -104,6 +108,8 @@
 		2FAFA1951F088B680031FF15 /* JsonSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerialization.swift; sourceTree = "<group>"; };
 		2FAFA1971F088B870031FF15 /* JsonSerializationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializationSpec.swift; sourceTree = "<group>"; };
 		2FC164861F126175004DCF00 /* ResponseJsonSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseJsonSerialization.swift; sourceTree = "<group>"; };
+		2FC1648B1F127C0B004DCF00 /* FileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorageSpec.swift; sourceTree = "<group>"; };
 		2FDEADE01F0425800047A8E9 /* AsyncRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestHandler.swift; sourceTree = "<group>"; };
 		2FDEADE31F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestHandlerSpec.swift; sourceTree = "<group>"; };
 		537BC2DB8E99E4166694BDA6 /* Pods-AwesomeQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 				2F0BF0191F01476500775B7A /* QuotesService.swift */,
 				2FAFA18E1F08453A0031FF15 /* NetworkService.swift */,
 				2FAFA1931F0889D10031FF15 /* LocalStorage.swift */,
+				2FC1648B1F127C0B004DCF00 /* FileStorage.swift */,
 				2FAFA1951F088B680031FF15 /* JsonSerialization.swift */,
 				2F0BEFF31EFECD4E00775B7A /* AppState.swift */,
 				2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */,
@@ -200,6 +207,7 @@
 				2FAFA18C1F0839B20031FF15 /* ActionsSpec.swift */,
 				2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */,
 				2FAFA1971F088B870031FF15 /* JsonSerializationSpec.swift */,
+				2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */,
 				2F0BF00B1EFF069300775B7A /* Utilities */,
 				2F0594701EFC028A000E013D /* Info.plist */,
 			);
@@ -544,6 +552,7 @@
 				2F0BF0031EFEF1B200775B7A /* RootView.swift in Sources */,
 				2F0BEFF71EFECD9B00775B7A /* AppReducer.swift in Sources */,
 				2FAFA1961F088B680031FF15 /* JsonSerialization.swift in Sources */,
+				2FC1648C1F127C0B004DCF00 /* FileStorage.swift in Sources */,
 				2F0BEFFB1EFEDDA300775B7A /* Quote.swift in Sources */,
 				2F0BEFFD1EFEF10400775B7A /* BaseViewController.swift in Sources */,
 				2F0BF0151EFF091300775B7A /* MainStore.swift in Sources */,
@@ -557,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F0BF00D1EFF06BA00775B7A /* RandomStringExtension.swift in Sources */,
+				2FC1648D1F127C0F004DCF00 /* FileStorage.swift in Sources */,
 				2F0BF0061EFEFBF100775B7A /* Quote.swift in Sources */,
 				2FDEADE41F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift in Sources */,
 				2FAFA1981F088B870031FF15 /* JsonSerializationSpec.swift in Sources */,
@@ -567,7 +577,9 @@
 				2FAFA18D1F0839B20031FF15 /* ActionsSpec.swift in Sources */,
 				2FAFA1921F0846280031FF15 /* RemoteQuotesServiceSpec.swift in Sources */,
 				2F0BF0041EFEFB5500775B7A /* RootViewModel.swift in Sources */,
+				2FC1648F1F127C46004DCF00 /* FileStorageSpec.swift in Sources */,
 				2F0BF0181EFF0BD900775B7A /* EquatableExtensions.swift in Sources */,
+				2FC1648A1F127BAD004DCF00 /* LocalStorage.swift in Sources */,
 				2F0BF0111EFF082400775B7A /* FakeObjectInitializers.swift in Sources */,
 				2FAFA1901F0845520031FF15 /* NetworkService.swift in Sources */,
 				2FC164871F126175004DCF00 /* ResponseJsonSerialization.swift in Sources */,
