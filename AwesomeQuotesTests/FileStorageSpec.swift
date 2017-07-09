@@ -70,5 +70,44 @@ class FileStorageSpec: QuickSpec {
                 expect(actual).to(equal(expected))
             }
         }
+
+        describe("QuoteCodable") {
+            it("init with Quote sets all properties") {
+                let expected = randomQuote(isFavorite: true)
+                let actual = QuoteCodable(quote: expected)
+
+                expect(actual.text).to(equal(expected.text))
+                expect(actual.author).to(equal(expected.author))
+                expect(actual.isFavorite).to(equal(expected.isFavorite))
+            }
+
+            it("init with parameters sets all properties") {
+                let expected = randomQuote(isFavorite: false)
+                let actual = QuoteCodable(text: expected.text, author: expected.author, isFavorite: expected.isFavorite)
+
+                expect(actual.text).to(equal(expected.text))
+                expect(actual.author).to(equal(expected.author))
+                expect(actual.isFavorite).to(equal(expected.isFavorite))
+            }
+
+            it("toQuote retuns quote with correct properties") {
+                let expected = randomQuote(isFavorite: true)
+                let actual = QuoteCodable(quote: expected).toQuote()
+
+                expect(actual).to(equal(expected))
+            }
+
+            it("Encoding and decoding with NSCoder preserves te original Quote") {
+                let expected = randomQuote(isFavorite: false)
+
+                let codable = QuoteCodable(quote: expected)
+                let archived = NSKeyedArchiver.archivedData(withRootObject: codable)
+                let unarchived = NSKeyedUnarchiver.unarchiveObject(with: archived) as? QuoteCodable
+
+                let actual = unarchived?.toQuote()
+
+                expect(actual).to(equal(expected))
+            }
+        }
     }
 }
