@@ -28,17 +28,6 @@ class AsyncRequestHandlerSpec: QuickSpec {
     }
 }
 
-class TestStore: DispatchingStoreType {
-    var dispatchedAction = FetchQuotes(.none)
-    func dispatch(_ action: Action) {
-        dispatchedAction = action as! FetchQuotes
-    }
-}
-
-enum TestError: Error {
-    case someError
-}
-
 func requestData(store: DispatchingStoreType, quotes: [Quote], failing: Bool = false, error: Error = TestError.someError) {
     let testDataService = TestQuotesService(quotes: quotes, failing: failing, error: error)
     let asyncRequestHandler = AsyncRequestHandler(quotesService: testDataService, store: store)

@@ -13,6 +13,11 @@
 		2F0594611EFC028A000E013D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594601EFC028A000E013D /* Assets.xcassets */; };
 		2F0594641EFC028A000E013D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0594621EFC028A000E013D /* LaunchScreen.storyboard */; };
 		2F05946F1EFC028A000E013D /* RootViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05946E1EFC028A000E013D /* RootViewModelSpec.swift */; };
+		2F0778E81F1780BD00D667B5 /* StorePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0778E71F1780BD00D667B5 /* StorePersister.swift */; };
+		2F0778EA1F17814600D667B5 /* StorePersisterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0778E91F17814600D667B5 /* StorePersisterSpec.swift */; };
+		2F0778EC1F17826400D667B5 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0778EB1F17826400D667B5 /* TestStore.swift */; };
+		2F0778EF1F1782B900D667B5 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0778EE1F1782B900D667B5 /* TestError.swift */; };
+		2F0778F01F17841600D667B5 /* StorePersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0778E71F1780BD00D667B5 /* StorePersister.swift */; };
 		2F0BEFF41EFECD4E00775B7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF31EFECD4E00775B7A /* AppState.swift */; };
 		2F0BEFF71EFECD9B00775B7A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */; };
 		2F0BEFF91EFEDCA300775B7A /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0BEFF81EFEDCA300775B7A /* Actions.swift */; };
@@ -86,6 +91,10 @@
 		2F0594701EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F0594751EFC028A000E013D /* AwesomeQuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeQuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F05947B1EFC028A000E013D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F0778E71F1780BD00D667B5 /* StorePersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorePersister.swift; sourceTree = "<group>"; };
+		2F0778E91F17814600D667B5 /* StorePersisterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorePersisterSpec.swift; sourceTree = "<group>"; };
+		2F0778EB1F17826400D667B5 /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
+		2F0778EE1F1782B900D667B5 /* TestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		2F0BEFF31EFECD4E00775B7A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = State/AppState.swift; sourceTree = "<group>"; };
 		2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = Reducers/AppReducer.swift; sourceTree = "<group>"; };
 		2F0BEFF81EFEDCA300775B7A /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -194,6 +203,7 @@
 				2F0594601EFC028A000E013D /* Assets.xcassets */,
 				2F0594621EFC028A000E013D /* LaunchScreen.storyboard */,
 				2F0594651EFC028A000E013D /* Info.plist */,
+				2F0778E71F1780BD00D667B5 /* StorePersister.swift */,
 			);
 			path = AwesomeQuotes;
 			sourceTree = "<group>";
@@ -201,6 +211,7 @@
 		2F05946D1EFC028A000E013D /* AwesomeQuotesTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F0778ED1F17826E00D667B5 /* Mocks */,
 				2F05946E1EFC028A000E013D /* RootViewModelSpec.swift */,
 				2F0BF00E1EFF06CD00775B7A /* AppReducerSpec.swift */,
 				2FDEADE31F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift */,
@@ -208,6 +219,7 @@
 				2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */,
 				2FAFA1971F088B870031FF15 /* JsonSerializationSpec.swift */,
 				2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */,
+				2F0778E91F17814600D667B5 /* StorePersisterSpec.swift */,
 				2F0BF00B1EFF069300775B7A /* Utilities */,
 				2F0594701EFC028A000E013D /* Info.plist */,
 			);
@@ -223,11 +235,20 @@
 			path = AwesomeQuotesUITests;
 			sourceTree = "<group>";
 		};
+		2F0778ED1F17826E00D667B5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */,
+				2F0778EB1F17826400D667B5 /* TestStore.swift */,
+				2F0778EE1F1782B900D667B5 /* TestError.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		2F0BF00B1EFF069300775B7A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */,
-				2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */,
 				2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */,
 				2FC164861F126175004DCF00 /* ResponseJsonSerialization.swift */,
 			);
@@ -558,6 +579,7 @@
 				2F0BF0151EFF091300775B7A /* MainStore.swift in Sources */,
 				2F0BEFFF1EFEF13D00775B7A /* RootViewModel.swift in Sources */,
 				2F0BEFF41EFECD4E00775B7A /* AppState.swift in Sources */,
+				2F0778E81F1780BD00D667B5 /* StorePersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,9 +591,11 @@
 				2FC1648D1F127C0F004DCF00 /* FileStorage.swift in Sources */,
 				2F0BF0061EFEFBF100775B7A /* Quote.swift in Sources */,
 				2FDEADE41F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift in Sources */,
+				2F0778EA1F17814600D667B5 /* StorePersisterSpec.swift in Sources */,
 				2FAFA1981F088B870031FF15 /* JsonSerializationSpec.swift in Sources */,
 				2F0BF0051EFEFB9300775B7A /* AppState.swift in Sources */,
 				2F0BF00F1EFF06CD00775B7A /* AppReducerSpec.swift in Sources */,
+				2F0778F01F17841600D667B5 /* StorePersister.swift in Sources */,
 				2FAFA1991F088CBD0031FF15 /* JsonSerialization.swift in Sources */,
 				2F9427771F01E15000B86680 /* QuotesService.swift in Sources */,
 				2FAFA18D1F0839B20031FF15 /* ActionsSpec.swift in Sources */,
@@ -583,6 +607,8 @@
 				2F0BF0111EFF082400775B7A /* FakeObjectInitializers.swift in Sources */,
 				2FAFA1901F0845520031FF15 /* NetworkService.swift in Sources */,
 				2FC164871F126175004DCF00 /* ResponseJsonSerialization.swift in Sources */,
+				2F0778EC1F17826400D667B5 /* TestStore.swift in Sources */,
+				2F0778EF1F1782B900D667B5 /* TestError.swift in Sources */,
 				2FDEADE21F04259B0047A8E9 /* AsyncRequestHandler.swift in Sources */,
 				2F0BF0161EFF092500775B7A /* MainStore.swift in Sources */,
 				2F0BF0131EFF088900775B7A /* Actions.swift in Sources */,

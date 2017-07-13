@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initStore(appState: AppState = AppState()) {
         self.store = MainStore(reducer: appReducer, state: appState)
         let quotesService = RemoteQuotesService(networkService: AppNetworkService())
-        self.statePersister = StatePersister(localStorage: FileStorage(), store: store)
+        self.statePersister = StatePersister(localStorage: FileStorage())
         self.asyncRequestHandler = AsyncRequestHandler(quotesService: quotesService, store: store)
         store.subscribe(self.asyncRequestHandler!)
         store.subscribe(self.statePersister!)
