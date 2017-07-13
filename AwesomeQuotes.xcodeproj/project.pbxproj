@@ -104,11 +104,11 @@
 		2F0BF0001EFEF18D00775B7A /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2F0BF0021EFEF1B200775B7A /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2F0BF0071EFEFC7B00775B7A /* AwesomeQuotesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeQuotesUITests.swift; sourceTree = "<group>"; };
-		2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomStringExtension.swift; path = Utilities/RandomStringExtension.swift; sourceTree = "<group>"; };
+		2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomStringExtension.swift; sourceTree = "<group>"; };
 		2F0BF00E1EFF06CD00775B7A /* AppReducerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducerSpec.swift; sourceTree = "<group>"; };
 		2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeObjectInitializers.swift; sourceTree = "<group>"; };
 		2F0BF0141EFF091300775B7A /* MainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStore.swift; sourceTree = "<group>"; };
-		2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquatableExtensions.swift; path = AwesomeQuotesTests/EquatableExtensions.swift; sourceTree = SOURCE_ROOT; };
+		2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquatableExtensions.swift; path = AwesomeQuotesTests/Utilities/EquatableExtensions.swift; sourceTree = SOURCE_ROOT; };
 		2F0BF0191F01476500775B7A /* QuotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesService.swift; sourceTree = "<group>"; };
 		2FAFA18C1F0839B20031FF15 /* ActionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsSpec.swift; sourceTree = "<group>"; };
 		2FAFA18E1F08453A0031FF15 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -225,11 +225,10 @@
 		2F0778ED1F17826E00D667B5 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */,
 				2F0778EB1F17826400D667B5 /* TestStore.swift */,
 				2F0778EE1F1782B900D667B5 /* TestError.swift */,
 			);
-			name = Mocks;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		2F0778F11F178F7900D667B5 /* View */ = {
@@ -280,11 +279,12 @@
 		2F0BF00B1EFF069300775B7A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2F0BF0101EFF082400775B7A /* FakeObjectInitializers.swift */,
 				2F0BF00C1EFF06BA00775B7A /* RandomStringExtension.swift */,
 				2F0BF0171EFF0BD900775B7A /* EquatableExtensions.swift */,
 				2FC164861F126175004DCF00 /* ResponseJsonSerialization.swift */,
 			);
-			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4C6D9CDCEB1B76B5BBD40157 /* Pods */ = {
