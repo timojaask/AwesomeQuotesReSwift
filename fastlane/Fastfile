@@ -1,0 +1,32 @@
+lane :test do |options|
+  scan(
+    scheme: "AwesomeQuotes",
+    devices: ["iPhone 6s"],
+    clean: (options[:noClean] ? false : true),
+    code_coverage: true
+  )
+  slather(
+      simple_output: true,
+      proj: "AwesomeQuotes.xcodeproj",
+      workspace: "AwesomeQuotes.xcworkspace",
+      scheme: "AwesomeQuotes",
+      ignore:['../../*']
+  )
+end
+
+lane :testNoClean do
+  test(noClean: true)
+end
+
+lane :testUnit do |options|
+  scan(
+    scheme: "UnitTest",
+    devices: ["iPhone 6s"],
+    clean: (options[:noClean] ? false : true),
+    code_coverage: true
+  )
+end
+
+lane :testUnitNoClean do
+  testUnit(noClean: true)
+end
