@@ -95,8 +95,8 @@
 		2F0778E91F17814600D667B5 /* StorePersisterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorePersisterSpec.swift; sourceTree = "<group>"; };
 		2F0778EB1F17826400D667B5 /* TestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
 		2F0778EE1F1782B900D667B5 /* TestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
-		2F0BEFF31EFECD4E00775B7A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = State/AppState.swift; sourceTree = "<group>"; };
-		2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = Reducers/AppReducer.swift; sourceTree = "<group>"; };
+		2F0BEFF31EFECD4E00775B7A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		2F0BEFF81EFEDCA300775B7A /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		2F0BEFFA1EFEDDA300775B7A /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		2F0BEFFC1EFEF10400775B7A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -184,26 +184,13 @@
 			isa = PBXGroup;
 			children = (
 				2F0594561EFC028A000E013D /* AppDelegate.swift */,
-				2F0BEFFC1EFEF10400775B7A /* BaseViewController.swift */,
-				2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */,
-				2F0594581EFC028A000E013D /* RootViewController.swift */,
-				2F0BF0021EFEF1B200775B7A /* RootView.swift */,
-				2F0BEFFA1EFEDDA300775B7A /* Quote.swift */,
-				2F0BEFF81EFEDCA300775B7A /* Actions.swift */,
-				2F0BF0001EFEF18D00775B7A /* CustomButton.swift */,
-				2F0BF0141EFF091300775B7A /* MainStore.swift */,
-				2FDEADE01F0425800047A8E9 /* AsyncRequestHandler.swift */,
-				2F0BF0191F01476500775B7A /* QuotesService.swift */,
-				2FAFA18E1F08453A0031FF15 /* NetworkService.swift */,
-				2FAFA1931F0889D10031FF15 /* LocalStorage.swift */,
-				2FC1648B1F127C0B004DCF00 /* FileStorage.swift */,
-				2FAFA1951F088B680031FF15 /* JsonSerialization.swift */,
-				2F0BEFF31EFECD4E00775B7A /* AppState.swift */,
-				2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */,
+				2F0778F21F178F8400D667B5 /* Model */,
+				2F0778F11F178F7900D667B5 /* View */,
+				2F0778F31F178FB400D667B5 /* Services */,
+				2F0778F41F17900200D667B5 /* ReSwift */,
 				2F0594601EFC028A000E013D /* Assets.xcassets */,
 				2F0594621EFC028A000E013D /* LaunchScreen.storyboard */,
 				2F0594651EFC028A000E013D /* Info.plist */,
-				2F0778E71F1780BD00D667B5 /* StorePersister.swift */,
 			);
 			path = AwesomeQuotes;
 			sourceTree = "<group>";
@@ -211,7 +198,6 @@
 		2F05946D1EFC028A000E013D /* AwesomeQuotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F0778ED1F17826E00D667B5 /* Mocks */,
 				2F05946E1EFC028A000E013D /* RootViewModelSpec.swift */,
 				2F0BF00E1EFF06CD00775B7A /* AppReducerSpec.swift */,
 				2FDEADE31F042E5F0047A8E9 /* AsyncRequestHandlerSpec.swift */,
@@ -220,6 +206,7 @@
 				2FAFA1971F088B870031FF15 /* JsonSerializationSpec.swift */,
 				2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */,
 				2F0778E91F17814600D667B5 /* StorePersisterSpec.swift */,
+				2F0778ED1F17826E00D667B5 /* Mocks */,
 				2F0BF00B1EFF069300775B7A /* Utilities */,
 				2F0594701EFC028A000E013D /* Info.plist */,
 			);
@@ -243,6 +230,51 @@
 				2F0778EE1F1782B900D667B5 /* TestError.swift */,
 			);
 			name = Mocks;
+			sourceTree = "<group>";
+		};
+		2F0778F11F178F7900D667B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BF0001EFEF18D00775B7A /* CustomButton.swift */,
+				2F0BEFFC1EFEF10400775B7A /* BaseViewController.swift */,
+				2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */,
+				2F0594581EFC028A000E013D /* RootViewController.swift */,
+				2F0BF0021EFEF1B200775B7A /* RootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F0778F21F178F8400D667B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BEFFA1EFEDDA300775B7A /* Quote.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F0778F31F178FB400D667B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2FAFA1931F0889D10031FF15 /* LocalStorage.swift */,
+				2F0BF0191F01476500775B7A /* QuotesService.swift */,
+				2FAFA18E1F08453A0031FF15 /* NetworkService.swift */,
+				2FC1648B1F127C0B004DCF00 /* FileStorage.swift */,
+				2FAFA1951F088B680031FF15 /* JsonSerialization.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2F0778F41F17900200D667B5 /* ReSwift */ = {
+			isa = PBXGroup;
+			children = (
+				2F0BF0141EFF091300775B7A /* MainStore.swift */,
+				2F0BEFF31EFECD4E00775B7A /* AppState.swift */,
+				2F0BEFF81EFEDCA300775B7A /* Actions.swift */,
+				2F0BEFF61EFECD9B00775B7A /* AppReducer.swift */,
+				2FDEADE01F0425800047A8E9 /* AsyncRequestHandler.swift */,
+				2F0778E71F1780BD00D667B5 /* StorePersister.swift */,
+			);
+			path = ReSwift;
 			sourceTree = "<group>";
 		};
 		2F0BF00B1EFF069300775B7A /* Utilities */ = {
