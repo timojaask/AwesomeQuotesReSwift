@@ -1,6 +1,8 @@
 import UIKit
 import ReSwift
 
+let localStorageAppStateFileName = "AwesomeQuotes-appState"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -8,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var store: MainStore!
     var asyncRequestHandler: AsyncRequestHandler?
     var statePersister: StatePersister?
+    let fileStorage = FileStorage(fileName: localStorageAppStateFileName)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -17,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func loadPersistedAppState() {
-        FileStorage.loadState()
+        fileStorage.loadState()
             .then(execute: initStore)
             .catch(execute: handleLoadStateError)
     }
@@ -30,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initStore(appState: AppState = AppState()) {
         self.store = MainStore(reducer: appReducer, state: appState)
         let quotesService = RemoteQuotesService(networkService: AppNetworkService())
-        self.statePersister = StatePersister(localStorage: FileStorage())
+        self.statePersister = StatePersister(localStorage: fileStorage)
         self.asyncRequestHandler = AsyncRequestHandler(quotesService: quotesService, store: store)
         store.subscribe(self.asyncRequestHandler!)
         store.subscribe(self.statePersister!)

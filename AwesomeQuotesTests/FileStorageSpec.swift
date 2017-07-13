@@ -112,6 +112,16 @@ class FileStorageSpec: QuickSpec {
 
         describe("FileStorage") { 
             // This is an integration test that doesn't try to mock out the actual file system I/O
+            let testStorageFileName = "AwesomeQuotesTests-appState"
+
+            beforeEach {
+                clearLocalStorage(fileName: testStorageFileName)
+            }
+
+            afterEach {
+                clearLocalStorage(fileName: testStorageFileName)
+            }
+
 
             it("Writing and reading AppState to FileStorage preserves all properties") {
                 let quotes = defaultSetOfQuotes()
@@ -121,14 +131,14 @@ class FileStorageSpec: QuickSpec {
 
                 var actual: AppState?
 
-                let fileStorage = FileStorage()
+                let fileStorage = FileStorage(fileName: testStorageFileName)
 
                 func handleError(error: Error) {
                     fail("loadState failed with error: \(error.localizedDescription)")
                 }
 
                 func loadState() {
-                    FileStorage.loadState()
+                    fileStorage.loadState()
                         .then { appState -> Void in
                             actual = appState
                         }
@@ -143,4 +153,8 @@ class FileStorageSpec: QuickSpec {
             }
         }
     }
+}
+
+func clearLocalStorage(fileName: String) {
+    try? FileManager.default.removeItem(atPath: FileStorage.filePath(fileName))
 }

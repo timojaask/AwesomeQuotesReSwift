@@ -71,23 +71,25 @@ class QuoteCodable: NSObject, NSCoding {
 
 struct FileStorage: LocalStorage {
 
-    static func filePath() -> String {
+    let fileName: String
+
+    static func filePath(_ fileName: String) -> String {
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        return (url!.appendingPathComponent("AwesomeQuotes-appState").path)
+        return (url!.appendingPathComponent(fileName).path)
     }
 
     func saveState(state: AppState) -> Promise<Void> {
         let codable = AppStateCodable(appState: state)
-        NSKeyedArchiver.archiveRootObject(codable, toFile: FileStorage.filePath())
+        NSKeyedArchiver.archiveRootObject(codable, toFile: FileStorage.filePath(self.fileName))
 
         return Promise.init { (fulfill, reject) in
             fulfill()
         }
     }
 
-    static func loadState() -> Promise<AppState> {
+    func loadState() -> Promise<AppState> {
         return Promise.init { (fulfill, reject) in
-            guard let codable = NSKeyedUnarchiver.unarchiveObject(withFile: filePath()) as? AppStateCodable else {
+            guard let codable = NSKeyedUnarchiver.unarchiveObject(withFile: FileStorage.filePath(self.fileName)) as? AppStateCodable else {
                 fulfill(AppState())
                 return
             }

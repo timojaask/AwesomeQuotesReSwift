@@ -28,7 +28,7 @@ class TestLocalStorage: LocalStorage {
         return Promise.init { (fulfill, _) in fulfill() }
     }
 
-    static func loadState() -> Promise<AppState> {
+    func loadState() -> Promise<AppState> {
         fatalError("Not implemented")
     }
 }
