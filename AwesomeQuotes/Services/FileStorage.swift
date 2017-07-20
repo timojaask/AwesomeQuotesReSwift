@@ -29,7 +29,7 @@ class AppStateCodable: NSObject, NSCoding {
     }
 
     func toAppState() -> AppState {
-        return AppState(quotes: self.quotes, currentQuoteIndex: self.currentQuoteIndex, fetchQuotesState: .none)
+        return AppState(quotes: self.quotes, currentQuoteIndex: self.currentQuoteIndex)
     }
 }
 

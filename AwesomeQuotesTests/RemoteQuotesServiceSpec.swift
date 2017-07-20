@@ -12,7 +12,7 @@ class RemoteQuotesServiceSpec: QuickSpec {
                 let quotesService = RemoteQuotesService(networkService: TestNetworkService(json: quotes.toJson()))
 
                 var result: [Quote] = []
-                quotesService.getQuotes()
+                quotesService.fetchQuotes()
                     .then { result = $0 }
                     .catch { _ in fail("getQuotes was not supposed to throw an error") }
 

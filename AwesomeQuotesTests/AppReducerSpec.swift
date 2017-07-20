@@ -32,40 +32,6 @@ class AppReducerSpec: QuickSpec {
             }
         }
 
-        describe("Fetch quotes") {
-
-            it("sets fetchQuotesState to request") {
-                let stateBefore = stateWithQuotes()
-                let stateAfter = appReducer(action: FetchQuotes(.request), state: stateBefore)
-
-                expect(stateBefore.fetchQuotesState).to(equal(FetchQuotesState.none))
-                expect(stateAfter.fetchQuotesState).to(equal(FetchQuotesState.request))
-            }
-
-            it("sets fetchQuotesState to success with fetched quotes array") {
-                let fetchedQuotes = defaultSetOfQuotes()
-
-                let stateBefore = stateWithQuotes()
-                let stateAfter = appReducer(action: FetchQuotes(.success(quotes: fetchedQuotes)), state: stateBefore)
-
-                expect(stateBefore.fetchQuotesState).to(equal(FetchQuotesState.none))
-                expect(stateAfter.fetchQuotesState).to(equal(FetchQuotesState.success(quotes: fetchedQuotes)))
-            }
-
-            it("sets fetchedQuotesState to error") {
-                enum TestError: Error {
-                    case someOtherError
-                    case someError
-                }
-
-                let stateBefore = stateWithQuotes()
-                let stateAfter = appReducer(action: FetchQuotes(.error(error: TestError.someError)), state: stateBefore)
-
-                expect(stateBefore.fetchQuotesState).to(equal(FetchQuotesState.none))
-                expect(stateAfter.fetchQuotesState).to(equal(FetchQuotesState.error(error: TestError.someError)))
-            }
-        }
-
         describe("Toggle favorite for current quote") {
 
             it("sets favorite to true for current quote when quote is not favorite") {

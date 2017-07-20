@@ -5,6 +5,7 @@ func appReducer (action: Action, state: AppState?) -> AppState {
 
     switch action {
     case _ as NextQuote:
+        // TODO: This guard is unnecessary, ebcause of if statemenet below
         guard state.quotes.count > 0 else {
             break
         }
@@ -14,8 +15,7 @@ func appReducer (action: Action, state: AppState?) -> AppState {
         }
 
     case let action as FetchQuotes:
-        state.fetchQuotesState = action.state
-        if case let .success(quotes) = action.state {
+        if case .success(let quotes) = action {
             state.quotes = mergeFetchedQuotes(remoteQuotes: quotes, localQuotes: state.quotes)
             if state.currentQuoteIndex < 0 && state.quotes.count > 0 {
                 state.currentQuoteIndex = 0

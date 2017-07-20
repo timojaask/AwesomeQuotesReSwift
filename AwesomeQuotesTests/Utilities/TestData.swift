@@ -36,13 +36,12 @@ func stateWithNoQuotes() -> AppState {
 
 func stateWithQuotes(selectFavoriteQuote: Bool = false) -> AppState {
     let quotes = defaultSetOfQuotes()
-    let currentQuoteIndex = selectFavoriteQuote ? favoriteQuoteIndexInDefaultSet : notFavoriteQuoteIndexInDefaultSet;
-    let currentQuote = quotes[currentQuoteIndex]
+    let currentQuoteIndex = selectFavoriteQuote ? favoriteQuoteIndexInDefaultSet : notFavoriteQuoteIndexInDefaultSet
 
     return AppState(
         quotes: quotes,
-        currentQuoteIndex: currentQuoteIndex,
-        fetchQuotesState: .none)
+        currentQuoteIndex: currentQuoteIndex
+    )
 }
 
 func viewModelWithNoQuotes() -> RootViewModel {

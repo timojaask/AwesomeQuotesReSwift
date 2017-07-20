@@ -10,7 +10,7 @@ class FileStorageSpec: QuickSpec {
             it("init with AppState sets quotes and currentQuoteIndex") {
                 let quotes = defaultSetOfQuotes()
                 let currentQuoteIndex = 1
-                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex, fetchQuotesState: .none)
+                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
 
                 let actual = AppStateCodable(appState: expected)
 
@@ -21,7 +21,7 @@ class FileStorageSpec: QuickSpec {
             it("init with quote and currentQuoteIndex sets the same named properties") {
                 let quotes = defaultSetOfQuotes()
                 let currentQuoteIndex = 1
-                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex, fetchQuotesState: .none)
+                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
 
                 let actual = AppStateCodable(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
 
@@ -30,7 +30,7 @@ class FileStorageSpec: QuickSpec {
             }
 
             it("toAppState sets correct quote and currentQuoteIndex") {
-                let expected = AppState(quotes: defaultSetOfQuotes(), currentQuoteIndex: 1, fetchQuotesState: .none)
+                let expected = AppState(quotes: defaultSetOfQuotes(), currentQuoteIndex: 1)
 
                 let actual = AppStateCodable(appState: expected).toAppState()
 
@@ -40,7 +40,7 @@ class FileStorageSpec: QuickSpec {
 
             it("Encoding and decoding with NSCoder preserves the original AppState") {
                 let quotes = remoteSetOfQuotes(number: 4)
-                let expected = AppState(quotes: quotes, currentQuoteIndex: 1, fetchQuotesState: .none)
+                let expected = AppState(quotes: quotes, currentQuoteIndex: 1)
 
                 let codable = AppStateCodable(appState: expected)
 
@@ -108,7 +108,7 @@ class FileStorageSpec: QuickSpec {
             it("Writing and reading AppState to FileStorage preserves all properties") {
                 let quotes = defaultSetOfQuotes()
                 let currentQuoteIndex = 1
-                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex, fetchQuotesState: .none)
+                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
 
                 var actual: AppState?
 

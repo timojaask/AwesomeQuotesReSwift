@@ -8,7 +8,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var store: MainStore!
-    var asyncRequestHandler: AsyncRequestHandler?
     var statePersister: StatePersister?
     let fileStorage = FileStorage(fileName: localStorageAppStateFileName)
 
@@ -31,13 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func initStore(appState: AppState = AppState()) {
-        self.store = MainStore(reducer: appReducer, state: appState)
         let quotesService = RemoteQuotesService(networkService: AppNetworkService())
+        let sideEffects = injectService(service: quotesService, receivers: dataServiceSideEffects)
+        let middleware = createMiddleware(items: sideEffects)
+        store = Store<AppState>(reducer: appReducer, state: appState, middleware: [middleware])
         self.statePersister = StatePersister(localStorage: fileStorage)
-        self.asyncRequestHandler = AsyncRequestHandler(quotesService: quotesService, store: store)
-        store.subscribe(self.asyncRequestHandler!)
         store.subscribe(self.statePersister!)
-        store.dispatch(FetchQuotes(.request))
+        store.dispatch(FetchQuotes.request)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController(store: store)
