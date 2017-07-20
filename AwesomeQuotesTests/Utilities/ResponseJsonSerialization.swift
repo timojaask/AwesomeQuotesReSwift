@@ -1,4 +1,5 @@
 import Foundation
+@testable import AwesomeQuotes
 
 extension Array where Element == Quote {
     func toJson() -> Any {

@@ -1,4 +1,5 @@
 import ReSwift
+@testable import AwesomeQuotes
 
 class TestStore: DispatchingStoreType {
     var dispatchedAction = FetchQuotes(.none)

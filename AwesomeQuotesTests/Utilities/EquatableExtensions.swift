@@ -1,7 +1,8 @@
 import Foundation
+@testable import AwesomeQuotes
 
 extension AppState: Equatable {}
-func ==(lhs: AppState, rhs: AppState) -> Bool {
+public func ==(lhs: AppState, rhs: AppState) -> Bool {
     return
         lhs.currentQuoteIndex == rhs.currentQuoteIndex &&
             lhs.currentQuote == rhs.currentQuote &&
@@ -11,7 +12,7 @@ func ==(lhs: AppState, rhs: AppState) -> Bool {
 }
 
 extension Quote: Equatable {}
-func ==(lhs: Quote, rhs: Quote) -> Bool {
+public func ==(lhs: Quote, rhs: Quote) -> Bool {
     return
         lhs.author == rhs.author &&
             lhs.isFavorite == rhs.isFavorite &&
@@ -19,7 +20,7 @@ func ==(lhs: Quote, rhs: Quote) -> Bool {
 }
 
 extension FetchQuotesState: Equatable { }
-func ==(lhs: FetchQuotesState, rhs: FetchQuotesState) -> Bool {
+public func ==(lhs: FetchQuotesState, rhs: FetchQuotesState) -> Bool {
     switch (lhs, rhs) {
     case (.none, .none):
         return true
@@ -35,7 +36,7 @@ func ==(lhs: FetchQuotesState, rhs: FetchQuotesState) -> Bool {
 }
 
 extension FetchQuotes: Equatable {}
-func ==(lhs: FetchQuotes, rhs: FetchQuotes) -> Bool {
+public func ==(lhs: FetchQuotes, rhs: FetchQuotes) -> Bool {
     return lhs.state == rhs.state
 }
 

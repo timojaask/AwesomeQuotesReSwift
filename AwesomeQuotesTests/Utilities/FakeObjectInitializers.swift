@@ -1,4 +1,5 @@
 import Foundation
+@testable import AwesomeQuotes
 
 let notFavoriteQuoteIndexInDefaultSet: Int = 0
 let favoriteQuoteIndexInDefaultSet: Int = 1

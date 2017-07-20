@@ -2,6 +2,7 @@ import Quick
 import Nimble
 import ReSwift
 import PromiseKit
+@testable import AwesomeQuotes
 
 class StorePersisterSpec: QuickSpec {
     override func spec() {

@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+@testable import AwesomeQuotes
 
 class AppReducerSpec: QuickSpec {
     override func spec() {

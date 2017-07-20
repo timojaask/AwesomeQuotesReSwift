@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+@testable import AwesomeQuotes
 
 class ActionsSpec: QuickSpec {
     override func spec() {

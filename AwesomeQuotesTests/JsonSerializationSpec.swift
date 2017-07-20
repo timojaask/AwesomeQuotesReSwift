@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import PromiseKit
+@testable import AwesomeQuotes
 
 class JsonSerializationSpec: QuickSpec {
 
