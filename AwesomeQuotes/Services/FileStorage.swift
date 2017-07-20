@@ -29,8 +29,7 @@ class AppStateCodable: NSObject, NSCoding {
     }
 
     func toAppState() -> AppState {
-        let currentQuote = quotes.count > 0 && currentQuoteIndex >= 0 ? quotes[currentQuoteIndex] : nil
-        return AppState(quotes: self.quotes, currentQuoteIndex: self.currentQuoteIndex, currentQuote: currentQuote, fetchQuotesState: .none)
+        return AppState(quotes: self.quotes, currentQuoteIndex: self.currentQuoteIndex, fetchQuotesState: .none)
     }
 }
 

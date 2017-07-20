@@ -42,7 +42,6 @@ func stateWithQuotes(selectFavoriteQuote: Bool = false) -> AppState {
     return AppState(
         quotes: quotes,
         currentQuoteIndex: currentQuoteIndex,
-        currentQuote: currentQuote,
         fetchQuotesState: .none)
 }
 

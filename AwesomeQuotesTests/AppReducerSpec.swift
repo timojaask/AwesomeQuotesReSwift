@@ -30,14 +30,6 @@ class AppReducerSpec: QuickSpec {
                 
                 expect(stateBefore).to(equal(stateAfter))
             }
-
-            it("sets current quote to the next quote in the quotes array") {
-                let stateBefore = stateWithQuotes()
-                let expectedNextQuote = stateBefore.quotes[stateBefore.currentQuoteIndex + 1]
-                let stateAfter = appReducer(action: NextQuote(), state: stateBefore)
-
-                expect(stateAfter.currentQuote).to(equal(expectedNextQuote))
-            }
         }
 
         describe("Fetch quotes") {
@@ -80,16 +72,16 @@ class AppReducerSpec: QuickSpec {
                 let stateBefore = stateWithQuotes()
                 let stateAfter = appReducer(action: ToggleFavoriteForCurrentQuote(), state: stateBefore)
 
-                expect(stateBefore.currentQuote?.isFavorite).to(equal(false))
-                expect(stateAfter.currentQuote?.isFavorite).to(equal(true))
+                expect(stateBefore.quotes[stateBefore.currentQuoteIndex].isFavorite).to(equal(false))
+                expect(stateAfter.quotes[stateAfter.currentQuoteIndex].isFavorite).to(equal(true))
             }
 
             it("sets favorite to false for current quote when quote is favorited") {
                 let stateBefore = stateWithQuotes(selectFavoriteQuote: true)
                 let stateAfter = appReducer(action: ToggleFavoriteForCurrentQuote(), state: stateBefore)
 
-                expect(stateBefore.currentQuote?.isFavorite).to(equal(true))
-                expect(stateAfter.currentQuote?.isFavorite).to(equal(false))
+                expect(stateBefore.quotes[stateBefore.currentQuoteIndex].isFavorite).to(equal(true))
+                expect(stateAfter.quotes[stateAfter.currentQuoteIndex].isFavorite).to(equal(false))
             }
         }
 

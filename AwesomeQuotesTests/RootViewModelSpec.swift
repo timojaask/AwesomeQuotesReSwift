@@ -3,7 +3,7 @@ import Nimble
 @testable import AwesomeQuotes
 
 class RootViewModelSpec: QuickSpec {
-
+    
     override func spec() {
         describe("Quote text") {
 
@@ -14,7 +14,8 @@ class RootViewModelSpec: QuickSpec {
 
             it("has current quote text") {
                 let vm = viewModelWithQuotes()
-                expect(vm.quoteText).to(equal(vm.state.currentQuote!.text))
+                let expected = vm.state.quotes[vm.state.currentQuoteIndex].text
+                expect(vm.quoteText).to(equal(expected))
             }
         }
 
@@ -27,7 +28,8 @@ class RootViewModelSpec: QuickSpec {
 
             it("has current author") {
                 let vm = viewModelWithQuotes()
-                expect(vm.quoteAuthor).to(equal(" – \(vm.state.currentQuote!.author)"))
+                let expected = vm.state.quotes[vm.state.currentQuoteIndex].author
+                expect(vm.quoteAuthor).to(equal(" – \(expected)"))
             }
         }
 

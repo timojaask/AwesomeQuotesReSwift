@@ -12,7 +12,6 @@ func appReducer (action: Action, state: AppState?) -> AppState {
         if state.currentQuoteIndex >= state.quotes.count {
             state.currentQuoteIndex = 0
         }
-        state.currentQuote = state.quotes[state.currentQuoteIndex]
 
     case let action as FetchQuotes:
         state.fetchQuotesState = action.state
@@ -20,7 +19,6 @@ func appReducer (action: Action, state: AppState?) -> AppState {
             state.quotes = mergeFetchedQuotes(remoteQuotes: quotes, localQuotes: state.quotes)
             if state.currentQuoteIndex < 0 && state.quotes.count > 0 {
                 state.currentQuoteIndex = 0
-                state.currentQuote = state.quotes[state.currentQuoteIndex]
             }
         }
 
@@ -29,7 +27,6 @@ func appReducer (action: Action, state: AppState?) -> AppState {
             break
         }
         state.quotes[state.currentQuoteIndex].isFavorite = !state.quotes[state.currentQuoteIndex].isFavorite
-        state.currentQuote = state.quotes[state.currentQuoteIndex]
 
     default:
         break

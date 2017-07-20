@@ -5,7 +5,6 @@ extension AppState: Equatable {}
 public func ==(lhs: AppState, rhs: AppState) -> Bool {
     return
         lhs.currentQuoteIndex == rhs.currentQuoteIndex &&
-            lhs.currentQuote == rhs.currentQuote &&
             lhs.fetchQuotesState == rhs.fetchQuotesState &&
             lhs.quotes == rhs.quotes
 

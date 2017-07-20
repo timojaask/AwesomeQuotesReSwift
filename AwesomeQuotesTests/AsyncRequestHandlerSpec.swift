@@ -33,7 +33,7 @@ func requestData(store: DispatchingStoreType, quotes: [Quote], failing: Bool = f
     let testDataService = TestQuotesService(quotes: quotes, failing: failing, error: error)
     let asyncRequestHandler = AsyncRequestHandler(quotesService: testDataService, store: store)
 
-    let newState = AppState(quotes: [], currentQuoteIndex: -1, currentQuote: nil, fetchQuotesState: .request)
+    let newState = AppState(quotes: [], currentQuoteIndex: -1, fetchQuotesState: .request)
     asyncRequestHandler.newState(state: newState)
 }
 
