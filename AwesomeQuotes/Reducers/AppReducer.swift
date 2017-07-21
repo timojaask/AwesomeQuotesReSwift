@@ -5,7 +5,6 @@ func appReducer (action: Action, state: AppState?) -> AppState {
 
     switch action {
     case _ as NextQuote:
-        // TODO: This guard is unnecessary, ebcause of if statemenet below
         guard state.quotes.count > 0 else {
             break
         }
