@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func initStore(appState: AppState = AppState()) {
         let quotesService = RemoteQuotesService(networkService: AppNetworkService())
-        let sideEffects = injectService(service: quotesService, receivers: dataServiceSideEffects)
+        let sideEffects = injectService(service: quotesService, receivers: quotesServiceSideEffects)
         let middleware = createMiddleware(items: sideEffects)
         store = Store<AppState>(reducer: appReducer, state: appState, middleware: [middleware])
         self.statePersister = StatePersister(localStorage: fileStorage)

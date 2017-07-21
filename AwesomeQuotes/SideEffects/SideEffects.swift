@@ -1,3 +1,3 @@
-let dataServiceSideEffects = [
+let quotesServiceSideEffects = [
     fetchQuotes,
 ]

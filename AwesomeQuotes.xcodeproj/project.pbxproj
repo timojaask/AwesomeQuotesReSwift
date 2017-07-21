@@ -182,9 +182,9 @@
 		2F0594551EFC028A000E013D /* AwesomeQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				2F0594561EFC028A000E013D /* AppDelegate.swift */,
 				2FC1132F1F2195D4001A3E7D /* AppState.swift */,
 				2FC113301F2195D4001A3E7D /* MainStore.swift */,
-				2F0594561EFC028A000E013D /* AppDelegate.swift */,
 				2F0778F21F178F8400D667B5 /* Model */,
 				2FC1132E1F219493001A3E7D /* Actions */,
 				2F0778F41F17900200D667B5 /* Reducers */,
