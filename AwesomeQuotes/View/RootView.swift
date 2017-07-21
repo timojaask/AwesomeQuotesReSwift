@@ -4,6 +4,7 @@ import Cartography
 class RootView: UIView {
     
     let quoteTextLabel = UILabel()
+    let quoteAuthorLabel = UILabel()
     let isFavoriteLabel = UILabel()
     let nextQuoteButton = CustomButton("Show another")
     let favoriteButton = CustomButton("Add to favorites")
@@ -19,9 +20,13 @@ class RootView: UIView {
 
         backgroundColor = UIColor.white
         translatesAutoresizingMaskIntoConstraints = true
+
+        quoteTextLabel.numberOfLines = 0
+        quoteAuthorLabel.textAlignment = .right
         
         let subViews: [UIView] = [
             quoteTextLabel,
+            quoteAuthorLabel,
             isFavoriteLabel,
             nextQuoteButton,
             favoriteButton
@@ -31,13 +36,22 @@ class RootView: UIView {
         nextQuoteButton.addTarget(self, action: #selector(nextQuoteButtonTapped), for: .touchUpInside)
         favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
 
-        constrain(self, quoteTextLabel, isFavoriteLabel, favoriteButton, nextQuoteButton) {
-            (containerView, quoteTextLabel, isFavoriteLabel, favoriteButton, nextQuoteButton) in
-            quoteTextLabel.center == containerView.center
+        constrain(self, quoteTextLabel, quoteAuthorLabel, isFavoriteLabel) {
+            (containerView, quoteTextLabel, quoteAuthorLabel, isFavoriteLabel) in
+            quoteTextLabel.centerY == containerView.centerY
+            quoteTextLabel.leading == containerView.leadingMargin
+            quoteTextLabel.trailing == containerView.trailingMargin
 
-            isFavoriteLabel.top == quoteTextLabel.bottom + 20
-            isFavoriteLabel.centerX == quoteTextLabel.centerX
+            quoteAuthorLabel.top == quoteTextLabel.bottom + 15
+            quoteAuthorLabel.leading == containerView.leadingMargin
+            quoteAuthorLabel.trailing == containerView.trailingMargin
 
+            isFavoriteLabel.top == quoteAuthorLabel.bottom + 20
+            isFavoriteLabel.centerX == quoteAuthorLabel.centerX
+        }
+
+        constrain(self, favoriteButton, nextQuoteButton) {
+            (containerView, favoriteButton, nextQuoteButton) in
             favoriteButton.left == containerView.left
             favoriteButton.bottom == containerView.bottom
 
@@ -48,6 +62,7 @@ class RootView: UIView {
 
     func updateView(viewModel: RootViewModel) {
         quoteTextLabel.text = viewModel.quoteText
+        quoteAuthorLabel.text = viewModel.quoteAuthor
         isFavoriteLabel.text = viewModel.isFavoriteLabelText
         nextQuoteButton.isHidden = viewModel.nextQuoteButtonHidden
         favoriteButton.isHidden = viewModel.favoriteButtonHidden
