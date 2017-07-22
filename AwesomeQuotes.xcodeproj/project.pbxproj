@@ -34,6 +34,8 @@
 		2F82B8AB1F23A0AC00022F8C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */; };
 		2F82B8AD1F23A0BE00022F8C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */; };
 		2F82B8AF1F23A15000022F8C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */; };
+		2F82B8B11F23A6D500022F8C /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8B01F23A6D500022F8C /* FavoritesCell.swift */; };
+		2F82B8B31F23A89000022F8C /* FavoritesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8B21F23A89000022F8C /* FavoritesCellViewModel.swift */; };
 		2FAFA18F1F08453A0031FF15 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA18E1F08453A0031FF15 /* NetworkService.swift */; };
 		2FAFA1921F0846280031FF15 /* RemoteQuotesServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */; };
 		2FAFA1941F0889D10031FF15 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1931F0889D10031FF15 /* LocalStorage.swift */; };
@@ -108,6 +110,8 @@
 		2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		2F82B8B01F23A6D500022F8C /* FavoritesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
+		2F82B8B21F23A89000022F8C /* FavoritesCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCellViewModel.swift; sourceTree = "<group>"; };
 		2FAFA18E1F08453A0031FF15 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RemoteQuotesServiceSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2FAFA1931F0889D10031FF15 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */,
 				2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */,
 				2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */,
+				2F82B8B01F23A6D500022F8C /* FavoritesCell.swift */,
+				2F82B8B21F23A89000022F8C /* FavoritesCellViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -641,8 +647,10 @@
 				2F0594571EFC028A000E013D /* AppDelegate.swift in Sources */,
 				2FC1133F1F219623001A3E7D /* InjectService.swift in Sources */,
 				2FC113401F219623001A3E7D /* MiddlewareItem.swift in Sources */,
+				2F82B8B11F23A6D500022F8C /* FavoritesCell.swift in Sources */,
 				2F0BF01A1F01476500775B7A /* QuotesService.swift in Sources */,
 				2FC113321F2195D4001A3E7D /* MainStore.swift in Sources */,
+				2F82B8B31F23A89000022F8C /* FavoritesCellViewModel.swift in Sources */,
 				2FC113311F2195D4001A3E7D /* AppState.swift in Sources */,
 				2FAFA18F1F08453A0031FF15 /* NetworkService.swift in Sources */,
 				2FC113341F219607001A3E7D /* AppReducer.swift in Sources */,
