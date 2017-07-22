@@ -8,6 +8,7 @@ class RootView: UIView {
     let isFavoriteLabel = UILabel()
     let nextQuoteButton = CustomButton("Show another")
     let favoriteButton = CustomButton("Add to favorites")
+    let showFavoritesButton = CustomButton("Favorites")
 
     let nextQuoteHandler: () -> ()
     let favoriteQuoteHandler: () -> ()
@@ -29,12 +30,20 @@ class RootView: UIView {
             quoteAuthorLabel,
             isFavoriteLabel,
             nextQuoteButton,
-            favoriteButton
+            favoriteButton,
+            showFavoritesButton,
         ]
         subViews.forEach { addSubview($0) }
 
         nextQuoteButton.addTarget(self, action: #selector(nextQuoteButtonTapped), for: .touchUpInside)
         favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        showFavoritesButton.addTarget(self, action: #selector(showFavoritesButtonTapped), for: .touchUpInside)
+
+        constrain(self, showFavoritesButton) {
+            (containerView, showFavoritesButton) in
+            showFavoritesButton.top == containerView.topMargin + 10
+            showFavoritesButton.trailing == containerView.trailingMargin
+        }
 
         constrain(self, quoteTextLabel, quoteAuthorLabel, isFavoriteLabel) {
             (containerView, quoteTextLabel, quoteAuthorLabel, isFavoriteLabel) in
@@ -52,10 +61,10 @@ class RootView: UIView {
 
         constrain(self, favoriteButton, nextQuoteButton) {
             (containerView, favoriteButton, nextQuoteButton) in
-            favoriteButton.left == containerView.left
+            favoriteButton.leading == containerView.leadingMargin
             favoriteButton.bottom == containerView.bottom
 
-            nextQuoteButton.right == containerView.right
+            nextQuoteButton.trailing == containerView.trailingMargin
             nextQuoteButton.bottom == containerView.bottom
         }
     }
@@ -75,6 +84,10 @@ class RootView: UIView {
 
     func favoriteButtonTapped() {
         favoriteQuoteHandler()
+    }
+
+    func showFavoritesButtonTapped() {
+
     }
 
     required init?(coder aDecoder: NSCoder) {
