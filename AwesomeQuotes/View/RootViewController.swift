@@ -11,7 +11,9 @@ class RootViewController: BaseViewController {
 
         rootView = RootView(
             nextQuoteHandler: { [weak self] in self?.nextQuote() },
-            favoriteQuoteHandler: { [weak self] in self?.favoriteQuote() }
+            favoriteQuoteHandler: { [weak self] in self?.favoriteQuote() },
+            showFavoritesHandler: { [weak self] in self?.showFavorites() }
+
         )
         self.view = rootView
     }
@@ -22,6 +24,10 @@ class RootViewController: BaseViewController {
 
     func favoriteQuote() {
         store.dispatch(ToggleFavoriteForCurrentQuote())
+    }
+
+    func showFavorites() {
+        print("SHOW FAVORITES")
     }
 
     override func newState(state: AppState) {

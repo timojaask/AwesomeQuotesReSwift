@@ -12,10 +12,16 @@ class RootView: UIView {
 
     let nextQuoteHandler: () -> ()
     let favoriteQuoteHandler: () -> ()
+    let showFavoritesHandler: () -> ()
 
-    init(nextQuoteHandler: @escaping () -> (), favoriteQuoteHandler: @escaping () -> ()) {
+    init(
+        nextQuoteHandler: @escaping () -> (),
+        favoriteQuoteHandler: @escaping () -> (),
+        showFavoritesHandler: @escaping () -> ()
+        ) {
         self.nextQuoteHandler = nextQuoteHandler
         self.favoriteQuoteHandler = favoriteQuoteHandler
+        self.showFavoritesHandler = showFavoritesHandler
 
         super.init(frame: CGRect.zero)
 
@@ -87,7 +93,7 @@ class RootView: UIView {
     }
 
     func showFavoritesButtonTapped() {
-
+        showFavoritesHandler()
     }
 
     required init?(coder aDecoder: NSCoder) {
