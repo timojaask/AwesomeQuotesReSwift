@@ -31,6 +31,9 @@
 		2F3F3C7C1F20DE630048C501 /* TestQuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C7B1F20DE630048C501 /* TestQuotesService.swift */; };
 		2F3F3C7E1F20E2260048C501 /* CreateMiddlewareSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C7D1F20E2260048C501 /* CreateMiddlewareSpec.swift */; };
 		2F3F3C801F20E2F90048C501 /* InjectServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C7F1F20E2F90048C501 /* InjectServiceSpec.swift */; };
+		2F82B8AB1F23A0AC00022F8C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */; };
+		2F82B8AD1F23A0BE00022F8C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */; };
+		2F82B8AF1F23A15000022F8C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */; };
 		2FAFA18F1F08453A0031FF15 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA18E1F08453A0031FF15 /* NetworkService.swift */; };
 		2FAFA1921F0846280031FF15 /* RemoteQuotesServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */; };
 		2FAFA1941F0889D10031FF15 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1931F0889D10031FF15 /* LocalStorage.swift */; };
@@ -102,6 +105,9 @@
 		2F3F3C7B1F20DE630048C501 /* TestQuotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestQuotesService.swift; sourceTree = "<group>"; };
 		2F3F3C7D1F20E2260048C501 /* CreateMiddlewareSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMiddlewareSpec.swift; sourceTree = "<group>"; };
 		2F3F3C7F1F20E2F90048C501 /* InjectServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectServiceSpec.swift; sourceTree = "<group>"; };
+		2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		2FAFA18E1F08453A0031FF15 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RemoteQuotesServiceSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2FAFA1931F0889D10031FF15 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -245,6 +251,9 @@
 				2F0BEFFE1EFEF13D00775B7A /* RootViewModel.swift */,
 				2F0594581EFC028A000E013D /* RootViewController.swift */,
 				2F0BF0021EFEF1B200775B7A /* RootView.swift */,
+				2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */,
+				2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */,
+				2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,6 +637,7 @@
 				2F0BF0011EFEF18D00775B7A /* CustomButton.swift in Sources */,
 				2FC113421F21962A001A3E7D /* StorePersister.swift in Sources */,
 				2FC113361F219610001A3E7D /* Actions.swift in Sources */,
+				2F82B8AF1F23A15000022F8C /* FavoritesViewModel.swift in Sources */,
 				2F0594571EFC028A000E013D /* AppDelegate.swift in Sources */,
 				2FC1133F1F219623001A3E7D /* InjectService.swift in Sources */,
 				2FC113401F219623001A3E7D /* MiddlewareItem.swift in Sources */,
@@ -643,6 +653,8 @@
 				2FC1133A1F219619001A3E7D /* SideEffects.swift in Sources */,
 				2FC1648C1F127C0B004DCF00 /* FileStorage.swift in Sources */,
 				2F0BEFFB1EFEDDA300775B7A /* Quote.swift in Sources */,
+				2F82B8AD1F23A0BE00022F8C /* FavoritesView.swift in Sources */,
+				2F82B8AB1F23A0AC00022F8C /* FavoritesViewController.swift in Sources */,
 				2F0BEFFD1EFEF10400775B7A /* BaseViewController.swift in Sources */,
 				2F0BEFFF1EFEF13D00775B7A /* RootViewModel.swift in Sources */,
 			);

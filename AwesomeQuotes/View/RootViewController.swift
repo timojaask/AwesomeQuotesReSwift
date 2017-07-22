@@ -27,7 +27,8 @@ class RootViewController: BaseViewController {
     }
 
     func showFavorites() {
-        print("SHOW FAVORITES")
+        let favoritesViewController = FavoritesViewController(store: self.store)
+        self.present(favoritesViewController, animated: true, completion: nil)
     }
 
     override func newState(state: AppState) {
