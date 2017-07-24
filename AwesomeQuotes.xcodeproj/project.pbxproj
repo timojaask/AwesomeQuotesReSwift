@@ -36,6 +36,7 @@
 		2F82B8AF1F23A15000022F8C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */; };
 		2F82B8B11F23A6D500022F8C /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8B01F23A6D500022F8C /* FavoritesCell.swift */; };
 		2F82B8B31F23A89000022F8C /* FavoritesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8B21F23A89000022F8C /* FavoritesCellViewModel.swift */; };
+		2F82B8B61F257D0400022F8C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8B51F257D0400022F8C /* R.generated.swift */; };
 		2FAFA18F1F08453A0031FF15 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA18E1F08453A0031FF15 /* NetworkService.swift */; };
 		2FAFA1921F0846280031FF15 /* RemoteQuotesServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */; };
 		2FAFA1941F0889D10031FF15 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFA1931F0889D10031FF15 /* LocalStorage.swift */; };
@@ -112,6 +113,7 @@
 		2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		2F82B8B01F23A6D500022F8C /* FavoritesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		2F82B8B21F23A89000022F8C /* FavoritesCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCellViewModel.swift; sourceTree = "<group>"; };
+		2F82B8B51F257D0400022F8C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2FAFA18E1F08453A0031FF15 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2FAFA1911F0846280031FF15 /* RemoteQuotesServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RemoteQuotesServiceSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2FAFA1931F0889D10031FF15 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		2F05944A1EFC028A000E013D = {
 			isa = PBXGroup;
 			children = (
+				2F82B8B51F257D0400022F8C /* R.generated.swift */,
 				2F0594551EFC028A000E013D /* AwesomeQuotes */,
 				2F05946D1EFC028A000E013D /* AwesomeQuotesTests */,
 				2F0594781EFC028A000E013D /* AwesomeQuotesUITests */,
@@ -362,6 +365,7 @@
 			buildConfigurationList = 2F05947E1EFC028A000E013D /* Build configuration list for PBXNativeTarget "AwesomeQuotes" */;
 			buildPhases = (
 				FAA3A233EB4D1312BA001203 /* [CP] Check Pods Manifest.lock */,
+				2F82B8B41F257C7800022F8C /* ShellScript */,
 				2F05944F1EFC028A000E013D /* Sources */,
 				2F0594501EFC028A000E013D /* Frameworks */,
 				2F0594511EFC028A000E013D /* Resources */,
@@ -511,6 +515,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AwesomeQuotesUITests/Pods-AwesomeQuotesUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2F82B8B41F257C7800022F8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 		666D15D1315FEE05A9914ED6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,6 +670,7 @@
 				2F82B8B31F23A89000022F8C /* FavoritesCellViewModel.swift in Sources */,
 				2FC113311F2195D4001A3E7D /* AppState.swift in Sources */,
 				2FAFA18F1F08453A0031FF15 /* NetworkService.swift in Sources */,
+				2F82B8B61F257D0400022F8C /* R.generated.swift in Sources */,
 				2FC113341F219607001A3E7D /* AppReducer.swift in Sources */,
 				2F0BF0031EFEF1B200775B7A /* RootView.swift in Sources */,
 				2FC1133E1F219623001A3E7D /* CreateMiddleware.swift in Sources */,

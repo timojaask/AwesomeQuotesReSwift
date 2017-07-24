@@ -17,6 +17,9 @@ PODS:
   - PromiseKit/UIKit (4.2.2):
     - PromiseKit/CorePromise
   - Quick (1.1.0)
+  - R.swift (3.3.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
   - ReSwift (4.0.0)
 
 DEPENDENCIES:
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - PromiseKit (~> 4.0)
   - PromiseKit/Alamofire (~> 4.0)
   - Quick
+  - R.swift (~> 3.3)
   - ReSwift
 
 SPEC CHECKSUMS:
@@ -34,8 +38,10 @@ SPEC CHECKSUMS:
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
 
-PODFILE CHECKSUM: da5bd694dc88105a340d0cea210e3044c21ea9ce
+PODFILE CHECKSUM: 9d2cebff32836941542fc112036a67a4ad51b465
 
 COCOAPODS: 1.2.1
