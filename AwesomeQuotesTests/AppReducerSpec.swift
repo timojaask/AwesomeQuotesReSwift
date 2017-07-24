@@ -85,7 +85,7 @@ class AppReducerSpec: QuickSpec {
 
             it("includes isFavorite flag from localQuotes") {
                 let remoteQuotes = remoteSetOfQuotes(number: 4)
-                let favoriteQuotes = [remoteQuotes[0], remoteQuotes[1]].map { Quote(text: $0.text, author: $0.author, isFavorite: true)
+                let favoriteQuotes = [remoteQuotes[0], remoteQuotes[1]].map { Quote(id: $0.id, text: $0.text, author: $0.author, isFavorite: true)
                 }
                 let localQuotes = favoriteQuotes + [randomQuote()]
                 let expected = favoriteQuotes + [remoteQuotes[2], remoteQuotes[3]]

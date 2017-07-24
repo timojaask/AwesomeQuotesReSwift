@@ -65,7 +65,7 @@ class FileStorageSpec: QuickSpec {
 
             it("init with parameters sets all properties") {
                 let expected = randomQuote(isFavorite: false)
-                let actual = QuoteCodable(text: expected.text, author: expected.author, isFavorite: expected.isFavorite)
+                let actual = QuoteCodable(id: expected.id, text: expected.text, author: expected.author, isFavorite: expected.isFavorite)
 
                 expect(actual.text).to(equal(expected.text))
                 expect(actual.author).to(equal(expected.author))

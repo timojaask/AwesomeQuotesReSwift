@@ -2,13 +2,13 @@ import Foundation
 @testable import AwesomeQuotes
 
 extension Array where Element == Quote {
-    func toJson() -> Any {
+    func toJson() -> [[String:Any]] {
         return self.map { $0.toJson() }
     }
 }
 
 extension Quote {
-    func toJson() -> Any {
-        return [ "text": text, "author": author ]
+    func toJson() -> [String: Any] {
+        return [ "id": id, "text": text, "author": author ]
     }
 }

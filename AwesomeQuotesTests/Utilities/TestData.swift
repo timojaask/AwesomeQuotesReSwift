@@ -6,6 +6,7 @@ let favoriteQuoteIndexInDefaultSet: Int = 1
 
 func randomQuote(isFavorite: Bool = false) -> Quote {
     return Quote(
+        id: randomNumber(),
         text: String.random(length: 20),
         author: String.random(length: 20),
         isFavorite: isFavorite)
