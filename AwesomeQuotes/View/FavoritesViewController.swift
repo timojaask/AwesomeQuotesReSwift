@@ -11,8 +11,8 @@ class FavoritesViewController: BaseViewController {
 
         favoritesView = FavoritesView(
             closeHandler: { [weak self] in self?.close() },
-            toggleFavoriteForQuote: { [weak self] (quote: Quote) in
-                self?.toggleFavoriteForQuote(quote: quote)
+            toggleFavorite: { [weak self] (quote: Quote) in
+                self?.toggleFavorite(quote: quote)
             }
         )
         self.view = favoritesView
@@ -22,7 +22,7 @@ class FavoritesViewController: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    func toggleFavoriteForQuote(quote: Quote) {
+    func toggleFavorite(quote: Quote) {
         store.dispatch(ToggleFavorite(quote: quote))
     }
 

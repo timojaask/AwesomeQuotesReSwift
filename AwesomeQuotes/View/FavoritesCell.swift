@@ -5,9 +5,9 @@ class FavoritesCell: UITableViewCell {
 
     let quoteTextLabel = UILabel()
     let quoteAuthorLabel = UILabel()
-    let favoriteButton = UIButton()
+    let toggleFavoriteButton = UIButton()
 
-    var favoriteButtonTapHandler: (() -> ())?
+    var toggleFavoriteHandler: (() -> ())?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -15,7 +15,7 @@ class FavoritesCell: UITableViewCell {
         let subViews: [UIView] = [
             quoteTextLabel,
             quoteAuthorLabel,
-            favoriteButton,
+            toggleFavoriteButton,
         ]
         subViews.forEach { addSubview($0) }
 
@@ -23,18 +23,18 @@ class FavoritesCell: UITableViewCell {
         quoteAuthorLabel.numberOfLines = 1
         quoteAuthorLabel.textAlignment = .right
 
-        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+        toggleFavoriteButton.addTarget(self, action: #selector(toggleFavoriteButtonTapped), for: .touchUpInside)
 
-        constrain(self, quoteTextLabel, quoteAuthorLabel, favoriteButton) {
-            (containerView, quoteTextLabel, quoteAuthorLabel, favoriteButton) in
+        constrain(self, quoteTextLabel, quoteAuthorLabel, toggleFavoriteButton) {
+            (containerView, quoteTextLabel, quoteAuthorLabel, toggleFavoriteButton) in
             quoteTextLabel.top == containerView.topMargin
             quoteTextLabel.leading == containerView.leadingMargin
             quoteTextLabel.trailing == containerView.trailingMargin
 
-            favoriteButton.leading == containerView.leadingMargin
-            favoriteButton.bottom == containerView.bottomMargin
-            favoriteButton.height == 16
-            favoriteButton.width == 16
+            toggleFavoriteButton.leading == containerView.leadingMargin
+            toggleFavoriteButton.bottom == containerView.bottomMargin
+            toggleFavoriteButton.height == 16
+            toggleFavoriteButton.width == 16
 
             quoteAuthorLabel.top == quoteTextLabel.bottom + 5
             quoteAuthorLabel.leading == containerView.leadingMargin
@@ -43,14 +43,14 @@ class FavoritesCell: UITableViewCell {
         }
     }
 
-    func favoriteButtonTapped() {
-        favoriteButtonTapHandler?()
+    func toggleFavoriteButtonTapped() {
+        toggleFavoriteHandler?()
     }
 
     func updateView(viewModel: FavoritesCellViewModel) {
         self.quoteTextLabel.text = viewModel.quoteText
         self.quoteAuthorLabel.text = viewModel.quoteAuthor
-        self.favoriteButton.setImage(viewModel.favoriteButtonImage, for: .normal)
+        self.toggleFavoriteButton.setImage(viewModel.favoriteButtonImage, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {
