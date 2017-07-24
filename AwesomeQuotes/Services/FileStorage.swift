@@ -34,37 +34,41 @@ class AppStateCodable: NSObject, NSCoding {
 }
 
 class QuoteCodable: NSObject, NSCoding {
+    let id: Int
     let text: String
     let author: String
     var isFavorite: Bool
 
     convenience init(quote: Quote) {
-        self.init(text: quote.text, author: quote.author, isFavorite: quote.isFavorite)
+        self.init(id: quote.id, text: quote.text, author: quote.author, isFavorite: quote.isFavorite)
     }
 
-    init(text: String, author: String, isFavorite: Bool) {
+    init(id: Int, text: String, author: String, isFavorite: Bool) {
+        self.id = id
         self.text = text
         self.author = author
         self.isFavorite = isFavorite
     }
 
     required convenience init?(coder decoder: NSCoder) {
+        let id = decoder.decodeInteger(forKey: "id")
         guard let text = decoder.decodeObject(forKey: "text") as? String,
             let author = decoder.decodeObject(forKey: "author") as? String
             else { return nil }
         let isFavorite = decoder.decodeBool(forKey: "isFavorite")
 
-        self.init(text: text, author: author, isFavorite: isFavorite)
+        self.init(id: id, text: text, author: author, isFavorite: isFavorite)
     }
 
     func encode(with coder: NSCoder) {
+        coder.encode(self.id, forKey: "id")
         coder.encode(self.text, forKey: "text")
         coder.encode(self.author, forKey: "author")
         coder.encode(self.isFavorite, forKey: "isFavorite")
     }
 
     func toQuote() -> Quote {
-        return Quote(text: text, author: author, isFavorite: isFavorite)
+        return Quote(id: id, text: text, author: author, isFavorite: isFavorite)
     }
 }
 

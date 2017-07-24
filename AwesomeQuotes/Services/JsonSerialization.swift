@@ -9,6 +9,9 @@ extension Quote {
         guard let jsonDictionary = json as? [String: Any] else {
             throw JsonSerializationError.JsonParsingError
         }
+        guard let id = jsonDictionary["id"] as? Int else {
+            throw JsonSerializationError.JsonParsingError
+        }
         guard let text = jsonDictionary["text"] as? String else {
             throw JsonSerializationError.JsonParsingError
         }
@@ -16,9 +19,9 @@ extension Quote {
             throw JsonSerializationError.JsonParsingError
         }
         if let isFavorite = jsonDictionary["isFavorite"] as? Bool {
-            return Quote(text: text, author: author, isFavorite: isFavorite)
+            return Quote(id: id, text: text, author: author, isFavorite: isFavorite)
         }
-        return Quote(text: text, author: author)
+        return Quote(id: id, text: text, author: author)
     }
 }
 

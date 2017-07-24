@@ -1,7 +1,7 @@
 import Foundation
 import PromiseKit
 
-let url = "https://jsonblob.com/api/jsonBlob/9ab95547-5a75-11e7-ae4c-9f9f5af9ecc0"
+let url = "https://jsonblob.com/api/jsonBlob/16fa9170-706f-11e7-9e0d-1bb120f11060"
 
 protocol QuotesService {
     func fetchQuotes() -> Promise<[Quote]>
