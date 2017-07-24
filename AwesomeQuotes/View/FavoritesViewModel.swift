@@ -3,8 +3,14 @@ import Foundation
 struct FavoritesViewModel {
 
     let state: AppState
+    let quotesToDisplay: [Quote]
 
-    var favoriteQuotes: [Quote] {
-        return state.quotes.filter { $0.isFavorite }
+    init(state: AppState, initialQuotes: [Quote]) {
+        self.state = state
+
+        let initialQuotesSet = Set(initialQuotes)
+        let currentQuotesSet = Set(state.quotes)
+        let quotesToDisplaySet = currentQuotesSet.intersection(initialQuotesSet)
+        self.quotesToDisplay = Array(quotesToDisplaySet)
     }
 }

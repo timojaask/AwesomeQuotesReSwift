@@ -77,14 +77,14 @@ class FavoritesView: UIView {
 
 extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel?.favoriteQuotes.count ?? 0
+        return self.viewModel?.quotesToDisplay.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesCellIdentifier, for: indexPath) as? FavoritesCell else {
             return UITableViewCell()
         }
-        guard let quote = self.viewModel?.favoriteQuotes[indexPath.row] else {
+        guard let quote = self.viewModel?.quotesToDisplay[indexPath.row] else {
             return UITableViewCell()
         }
         cell.toggleFavoriteHandler = { _ in self.toggleFavoriteTapped(quote: quote) }

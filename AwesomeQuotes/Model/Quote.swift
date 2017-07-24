@@ -14,7 +14,12 @@ struct Quote {
     }
 }
 
-extension Quote: Equatable {}
-func ==(lhs: Quote, rhs: Quote) -> Bool {
-    return lhs.id == rhs.id
+extension Quote: Hashable {
+    var hashValue: Int {
+        return id
+    }
+
+    static func ==(lhs: Quote, rhs: Quote) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
