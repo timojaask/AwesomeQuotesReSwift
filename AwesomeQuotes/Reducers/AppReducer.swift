@@ -21,6 +21,12 @@ func appReducer (action: Action, state: AppState?) -> AppState {
             }
         }
 
+    case let action as ToggleFavorite:
+        guard let quoteIndex = state.quotes.index(where: { $0 == action.quote }) else {
+            break
+        }
+        state.quotes[quoteIndex].isFavorite = !state.quotes[quoteIndex].isFavorite
+
     case _ as ToggleFavoriteForCurrentQuote:
         guard state.quotes.count > 0 else {
             break

@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct FavoritesCellViewModel {
 
@@ -10,5 +10,11 @@ struct FavoritesCellViewModel {
 
     var quoteAuthor: String {
         return " – \(quote.author)"
+    }
+
+    var favoriteButtonImage: UIImage {
+        return quote.isFavorite ?
+            R.image.favorite_on()! :
+            R.image.favorite_off()!
     }
 }

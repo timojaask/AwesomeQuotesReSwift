@@ -9,11 +9,14 @@ class FavoritesView: UIView {
     let closeButton = CustomButton("X")
     let quotesTableView = UITableView()
     let closeHandler: () -> ()
+    let toggleFavoriteForQuote: (Quote) -> ()
 
     var viewModel: FavoritesViewModel?
 
-    init(closeHandler: @escaping () -> ()) {
+    init(closeHandler: @escaping () -> (),
+        toggleFavoriteForQuote: @escaping (Quote) -> ()) {
         self.closeHandler = closeHandler
+        self.toggleFavoriteForQuote = toggleFavoriteForQuote
 
         super.init(frame: CGRect.zero)
 
@@ -61,6 +64,10 @@ class FavoritesView: UIView {
     func closeButtonTapped() {
         closeHandler()
     }
+
+    func toggleFavoriteTapped(quote: Quote) {
+        toggleFavoriteForQuote(quote)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -80,6 +87,9 @@ extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
         guard let quote = self.viewModel?.favoriteQuotes[indexPath.row] else {
             return UITableViewCell()
         }
+        cell.favoriteButtonTapHandler = ({ () -> () in
+            self.toggleFavoriteTapped(quote: quote)
+        })
         cell.updateView(viewModel: FavoritesCellViewModel(quote: quote))
         return cell
     }

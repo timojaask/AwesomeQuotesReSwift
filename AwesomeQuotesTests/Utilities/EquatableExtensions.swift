@@ -9,14 +9,6 @@ public func ==(lhs: AppState, rhs: AppState) -> Bool {
 
 }
 
-extension Quote: Equatable {}
-public func ==(lhs: Quote, rhs: Quote) -> Bool {
-    return
-        lhs.author == rhs.author &&
-            lhs.isFavorite == rhs.isFavorite &&
-            lhs.text == rhs.text
-}
-
 extension Error where Self: Equatable {}
 func ==(lhs: Error, rhs: Error) -> Bool {
     return lhs.localizedDescription == rhs.localizedDescription &&

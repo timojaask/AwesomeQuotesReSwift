@@ -172,13 +172,13 @@
 		2F05944A1EFC028A000E013D = {
 			isa = PBXGroup;
 			children = (
-				2F82B8B51F257D0400022F8C /* R.generated.swift */,
 				2F0594551EFC028A000E013D /* AwesomeQuotes */,
 				2F05946D1EFC028A000E013D /* AwesomeQuotesTests */,
 				2F0594781EFC028A000E013D /* AwesomeQuotesUITests */,
 				2F0594541EFC028A000E013D /* Products */,
 				4C6D9CDCEB1B76B5BBD40157 /* Pods */,
 				91DAF4941F74D6EBF26E796D /* Frameworks */,
+				2F82B8B51F257D0400022F8C /* R.generated.swift */,
 			);
 			sourceTree = "<group>";
 		};

@@ -11,3 +11,11 @@ struct Quote {
         self.isFavorite = isFavorite
     }
 }
+
+extension Quote: Equatable {}
+func ==(lhs: Quote, rhs: Quote) -> Bool {
+    return
+        lhs.author == rhs.author &&
+        lhs.isFavorite == rhs.isFavorite &&
+        lhs.text == rhs.text
+}
