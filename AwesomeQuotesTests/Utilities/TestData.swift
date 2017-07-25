@@ -45,10 +45,10 @@ func stateWithQuotes(selectFavoriteQuote: Bool = false) -> AppState {
     )
 }
 
-func viewModelWithNoQuotes() -> RootViewModel {
+func rootViewModelWithNoQuotes() -> RootViewModel {
     return RootViewModel(state: stateWithNoQuotes())
 }
 
-func viewModelWithQuotes(selectFavoriteQuote: Bool = false) -> RootViewModel {
+func rootViewModelWithQuotes(selectFavoriteQuote: Bool = false) -> RootViewModel {
     return RootViewModel(state: stateWithQuotes(selectFavoriteQuote: selectFavoriteQuote))
 }
