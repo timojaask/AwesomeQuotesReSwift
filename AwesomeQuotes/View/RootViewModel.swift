@@ -14,7 +14,7 @@ struct RootViewModel {
 
     var quoteText: String {
         guard let quote = self.currentQuote else {
-            return "No quotes to display"
+            return "Loading quotes..."
         }
         return quote.text
     }
