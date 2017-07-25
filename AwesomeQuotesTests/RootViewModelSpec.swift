@@ -9,7 +9,7 @@ class RootViewModelSpec: QuickSpec {
 
             it("has correct value when no quotes available") {
                 let vm = viewModelWithNoQuotes()
-                expect(vm.quoteText).to(equal("No quotes to display"))
+                expect(vm.quoteText).to(equal("Loading quotes..."))
             }
 
             it("has current quote text") {
