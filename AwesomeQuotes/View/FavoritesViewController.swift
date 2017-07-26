@@ -11,10 +11,10 @@ class FavoritesViewController: BaseViewController {
     // on this screen and user will be able to un-favorite them. However, we don't want
     // the quote to disappear as soon as it's un-favorited, to allow user to undo the
     // action. So this list acts as a view local cache of all the items it is displaying.
-    let initialQuotes: [Quote]
+    let initialQuoteIds: [Int]
 
     override init(store: MainStore) {
-        self.initialQuotes = store.state.quotes.filter { $0.isFavorite }
+        self.initialQuoteIds = store.state.quotes.filter({ $0.isFavorite }).map { $0.id }
         super.init(store: store)
 
         favoritesView = FavoritesView(
@@ -35,7 +35,7 @@ class FavoritesViewController: BaseViewController {
     }
 
     override func newState(state: AppState) {
-        favoritesView.updateView(viewModel: FavoritesViewModel(state: state, initialQuotes: initialQuotes))
+        favoritesView.updateView(viewModel: FavoritesViewModel(state: state, initialQuoteIds: initialQuoteIds))
     }
 
     required init?(coder aDecoder: NSCoder) {
