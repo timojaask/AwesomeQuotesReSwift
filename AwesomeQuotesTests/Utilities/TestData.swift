@@ -12,8 +12,12 @@ func randomQuote(isFavorite: Bool = false) -> Quote {
         isFavorite: isFavorite)
 }
 
+func randomQuotes(number: Int = 4, isFavorite: Bool = false) -> [Quote] {
+    return (0..<number).map { _ in randomQuote(isFavorite: isFavorite) }
+}
+
 func remoteSetOfQuotes(number: Int = 4) -> [Quote] {
-    return (0..<number).map { _ in randomQuote() }
+    return randomQuotes(number: number, isFavorite: false)
 }
 
 func defaultSetOfQuotes() -> [Quote] {
