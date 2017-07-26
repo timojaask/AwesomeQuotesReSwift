@@ -12,7 +12,7 @@ class FavoritesViewController: BaseViewController {
     let initialQuoteIds: [Int]
 
     override init(store: MainStore) {
-        self.initialQuoteIds = FavoritesViewModel.initialQuoteIds(initialState: store.state)
+        self.initialQuoteIds = FavoritesViewModel.initialQuoteIds(initialQuotes: store.state.quotes)
         super.init(store: store)
 
         favoritesView = FavoritesView(
