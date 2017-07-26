@@ -10,8 +10,8 @@ struct FavoritesViewModel {
         }
     }
 
-    static func initialQuoteIds(initialQuotes: [Quote]) -> [Int] {
-        return initialQuotes
+    static func getFavoriteQuoteIds(quotes: [Quote]) -> [Int] {
+        return quotes
                 .filter({ $0.isFavorite })
                 .map { $0.id }
     }
