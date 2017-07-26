@@ -6,11 +6,9 @@ class FavoritesViewController: BaseViewController {
 
     var favoritesView: FavoritesView!
 
-    // initialQuotes is a an array of quotes that are marked as "isFavorite" at the time
+    // initialQuoteIds is a an array of quote IDs that are marked as "isFavorite" at the time
     // when this view controller is instantiated. These quotes will be displayed 
-    // on this screen and user will be able to un-favorite them. However, we don't want
-    // the quote to disappear as soon as it's un-favorited, to allow user to undo the
-    // action. So this list acts as a view local cache of all the items it is displaying.
+    // on this screen and user will be able to un-favorite and favorite them.
     let initialQuoteIds: [Int]
 
     override init(store: MainStore) {
