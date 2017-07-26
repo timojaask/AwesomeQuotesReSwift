@@ -14,7 +14,7 @@ class FavoritesViewController: BaseViewController {
     let initialQuoteIds: [Int]
 
     override init(store: MainStore) {
-        self.initialQuoteIds = store.state.quotes.filter({ $0.isFavorite }).map { $0.id }
+        self.initialQuoteIds = FavoritesViewModel.initialQuoteIds(initialState: store.state)
         super.init(store: store)
 
         favoritesView = FavoritesView(

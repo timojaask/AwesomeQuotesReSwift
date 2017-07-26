@@ -9,4 +9,10 @@ struct FavoritesViewModel {
             return result + (initialQuoteIds.contains(quote.id) ? [quote] : [])
         }
     }
+
+    static func initialQuoteIds(initialState: AppState) -> [Int] {
+        return initialState.quotes
+                .filter({ $0.isFavorite })
+                .map { $0.id }
+    }
 }
