@@ -7,10 +7,8 @@ struct FavoritesViewModel {
 
     init(state: AppState, initialQuotes: [Quote]) {
         self.state = state
-
-        let initialQuotesSet = Set(initialQuotes)
-        let currentQuotesSet = Set(state.quotes)
-        let quotesToDisplaySet = currentQuotesSet.intersection(initialQuotesSet)
-        self.quotesToDisplay = Array(quotesToDisplaySet)
+        self.quotesToDisplay = state.quotes.reduce([]) { (result, quote) in
+            return result + (initialQuotes.contains(quote) ? [quote] : [])
+        }
     }
 }
