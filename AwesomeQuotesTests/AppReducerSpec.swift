@@ -4,6 +4,13 @@ import Nimble
 
 class AppReducerSpec: QuickSpec {
     override func spec() {
+        it("returns a new state when state parameter is nil") {
+            let expected = AppState()
+            let actual = appReducer(action: UnknownAction(), state: nil)
+
+            expect(actual).to(equal(expected))
+        }
+
         describe("Next quote") {
 
             it("increments current quote index") {
@@ -48,6 +55,13 @@ class AppReducerSpec: QuickSpec {
 
                 expect(stateBefore.quotes[stateBefore.currentQuoteIndex].isFavorite).to(equal(true))
                 expect(stateAfter.quotes[stateAfter.currentQuoteIndex].isFavorite).to(equal(false))
+            }
+
+            it("does nothing when quotes array is empty") {
+                let stateBefore = stateWithQuotes()
+                let stateAfter = appReducer(action: ToggleFavoriteForCurrentQuote(), state: stateBefore)
+
+                expect(stateAfter).to(equal(stateBefore))
             }
         }
 

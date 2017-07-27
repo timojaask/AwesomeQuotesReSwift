@@ -31,6 +31,7 @@
 		2F3F3C7C1F20DE630048C501 /* TestQuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C7B1F20DE630048C501 /* TestQuotesService.swift */; };
 		2F3F3C7E1F20E2260048C501 /* CreateMiddlewareSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C7D1F20E2260048C501 /* CreateMiddlewareSpec.swift */; };
 		2F3F3C801F20E2F90048C501 /* InjectServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F3C7F1F20E2F90048C501 /* InjectServiceSpec.swift */; };
+		2F6C18A41F2A1576003A54E5 /* UnknownAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6C18A31F2A1576003A54E5 /* UnknownAction.swift */; };
 		2F82B8AB1F23A0AC00022F8C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */; };
 		2F82B8AD1F23A0BE00022F8C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */; };
 		2F82B8AF1F23A15000022F8C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */; };
@@ -109,6 +110,7 @@
 		2F3F3C7B1F20DE630048C501 /* TestQuotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestQuotesService.swift; sourceTree = "<group>"; };
 		2F3F3C7D1F20E2260048C501 /* CreateMiddlewareSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMiddlewareSpec.swift; sourceTree = "<group>"; };
 		2F3F3C7F1F20E2F90048C501 /* InjectServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectServiceSpec.swift; sourceTree = "<group>"; };
+		2F6C18A31F2A1576003A54E5 /* UnknownAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnknownAction.swift; sourceTree = "<group>"; };
 		2F82B8AA1F23A0AC00022F8C /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		2F82B8AC1F23A0BE00022F8C /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		2F82B8AE1F23A15000022F8C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				2F0778EB1F17826400D667B5 /* TestStore.swift */,
 				2F0778EE1F1782B900D667B5 /* TestError.swift */,
 				2F3F3C7B1F20DE630048C501 /* TestQuotesService.swift */,
+				2F6C18A31F2A1576003A54E5 /* UnknownAction.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				2F82B8B81F27781400022F8C /* FavoritesViewModelSpec.swift in Sources */,
 				2FC164871F126175004DCF00 /* ResponseJsonSerialization.swift in Sources */,
 				2F3F3C7E1F20E2260048C501 /* CreateMiddlewareSpec.swift in Sources */,
+				2F6C18A41F2A1576003A54E5 /* UnknownAction.swift in Sources */,
 				2F3F3C801F20E2F90048C501 /* InjectServiceSpec.swift in Sources */,
 				2F3F3C7C1F20DE630048C501 /* TestQuotesService.swift in Sources */,
 				2F0778EC1F17826400D667B5 /* TestStore.swift in Sources */,
