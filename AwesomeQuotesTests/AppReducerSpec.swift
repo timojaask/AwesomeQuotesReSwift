@@ -65,6 +65,23 @@ class AppReducerSpec: QuickSpec {
             }
         }
 
+        describe("FetchQuotes") {
+            it("sets state.quotes with passed quotes on success") {
+                let stateBefore = AppState(quotes: [], currentQuoteIndex: -1)
+                let remoteQuotes = randomQuotes()
+                let stateAfter = appReducer(action: FetchQuotes.success(quotes: remoteQuotes), state: stateBefore)
+
+                expect(stateAfter.quotes).to(equal(remoteQuotes))
+            }
+
+            it("sets currentQuoteIndex to 0 if there are quotes and index is < 0") {
+                let stateBefore = AppState(quotes: [], currentQuoteIndex: -1)
+                let stateAfter = appReducer(action: FetchQuotes.success(quotes: randomQuotes()), state: stateBefore)
+
+                expect(stateAfter.currentQuoteIndex).to(equal(0))
+            }
+        }
+
         describe("mergeFetchedQuotes") { 
             it("includes remoteQuotes when localQuotes is empty") {
                 let remoteQuotes = remoteSetOfQuotes()
