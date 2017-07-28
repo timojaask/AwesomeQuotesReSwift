@@ -6,7 +6,7 @@ import PromiseKit
 
 class StorePersisterSpec: QuickSpec {
     override func spec() {
-        describe("Next state handler") {
+        describe("newState") {
 
             it("passes AppState to LocalStorage.saveState when state is updated") {
                 let testState = stateWithQuotes()

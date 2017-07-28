@@ -18,33 +18,39 @@ class JsonSerializationSpec: QuickSpec {
     override func spec() {
         describe("Quote") {
 
-            it("fromJson returns a valid quote object") {
+            describe("fromJson") {
 
-                let input = JsonSerializationSpec.sampleQuotesJson.first!
-                let expected = JsonSerializationSpec.sampleQuotes.first!
-                let actual = try? Quote.fromJson(json: input)
+                it("returns a valid quote object") {
 
-                expect(actual).to(equal(expected))
-            }
+                    let input = JsonSerializationSpec.sampleQuotesJson.first!
+                    let expected = JsonSerializationSpec.sampleQuotes.first!
+                    let actual = try? Quote.fromJson(json: input)
 
-            it("fromJson throws an error on invalid json") {
+                    expect(actual).to(equal(expected))
+                }
 
-                let input = ["text": "testText"]
-                let expected = JsonSerializationError.JsonParsingError
+                it("throws an error on invalid json") {
 
-                expect { try Quote.fromJson(json: input) }.to(throwError(expected))
+                    let input = ["text": "testText"]
+                    let expected = JsonSerializationError.JsonParsingError
+
+                    expect { try Quote.fromJson(json: input) }.to(throwError(expected))
+                }
             }
         }
 
         describe("Quote array") {
 
-            it("jsonToQuotes returns a valid quotes array") {
+            describe("jsonToQuotes") {
 
-                let input = JsonSerializationSpec.sampleQuotesJson
-                let expected = JsonSerializationSpec.sampleQuotes
-                let actual = try? jsonToQuotes(input)
+                it("returns a valid quotes array") {
 
-                expect(actual).to(equal(expected))
+                    let input = JsonSerializationSpec.sampleQuotesJson
+                    let expected = JsonSerializationSpec.sampleQuotes
+                    let actual = try? jsonToQuotes(input)
+
+                    expect(actual).to(equal(expected))
+                }
             }
         }
     }

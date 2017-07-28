@@ -11,7 +11,7 @@ class AppReducerSpec: QuickSpec {
             expect(actual).to(equal(expected))
         }
 
-        describe("Next quote") {
+        describe("NextQuote") {
 
             it("increments current quote index") {
                 let stateBefore = stateWithQuotes()
@@ -39,7 +39,7 @@ class AppReducerSpec: QuickSpec {
             }
         }
 
-        describe("Toggle favorite for current quote") {
+        describe("ToggleFavoriteForCurrentQuote") {
 
             it("sets favorite to true for current quote when quote is not favorite") {
                 let stateBefore = stateWithQuotes()

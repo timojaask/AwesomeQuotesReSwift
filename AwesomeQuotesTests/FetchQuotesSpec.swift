@@ -8,7 +8,7 @@ class FetchQuotesSpec: QuickSpec {
     override func spec() {
         describe("fetchQuotes") {
 
-            it("Does not call fetchQuotes service when action is not FetchQuotes") {
+            it("does not call fetchQuotes service when action is not FetchQuotes") {
                 struct testAction: Action { }
                 let testQuotesService = TestQuotesService(fetchQuotesCallback: {
                     fail("The test was not supposed to call fetchQuotes QuotesService method")
@@ -17,7 +17,7 @@ class FetchQuotesSpec: QuickSpec {
                 middlewareItem(testAction()) { _ in }
             }
 
-            it("Does not call fetchQuotes service when action is FetchQuotes and type is not request") {
+            it("does not call fetchQuotes service when action is FetchQuotes and type is not request") {
                 let testQuotesService = TestQuotesService(fetchQuotesCallback: {
                     fail("The test was not supposed to call fetchQuotes QuotesService method")
                 })
@@ -25,7 +25,7 @@ class FetchQuotesSpec: QuickSpec {
                 middlewareItem(FetchQuotes.success(quotes: [])) { _ in }
             }
 
-            it("Dispatches FetchQuotes.success action with correct users after FetchQuotes.request is passed") {
+            it("dispatches FetchQuotes.success action with correct users after FetchQuotes.request is passed") {
                 let expected = remoteSetOfQuotes()
                 let testQuotesService = TestQuotesService(quotes: expected)
                 let middlewareItem = fetchQuotes(quotesService: testQuotesService)
@@ -42,7 +42,7 @@ class FetchQuotesSpec: QuickSpec {
                 expect(actual).toEventually(equal(expected), timeout: 1)
             }
 
-            it("Dispatches FetchQuotes.error action if error occurs") {
+            it("dispatches FetchQuotes.error action if error occurs") {
                 let testQuotesService = TestQuotesService(shouldFail: true)
                 let middlewareItem = fetchQuotes(quotesService: testQuotesService)
 

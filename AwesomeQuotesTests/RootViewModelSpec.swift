@@ -5,7 +5,7 @@ import Nimble
 class RootViewModelSpec: QuickSpec {
     
     override func spec() {
-        describe("Quote text") {
+        describe("quoteText") {
 
             it("has correct value when no quotes available") {
                 let vm = rootViewModelWithNoQuotes()
@@ -19,7 +19,7 @@ class RootViewModelSpec: QuickSpec {
             }
         }
 
-        describe("Quote author") {
+        describe("quoteAuthor") {
 
             it("has empty string when no quotes available") {
                 let vm = rootViewModelWithNoQuotes()
@@ -33,50 +33,53 @@ class RootViewModelSpec: QuickSpec {
             }
         }
 
-        describe("Next quote button") {
+        describe("nextQuoteButtonHidden") {
 
-            it("hidden when there are no quotes") {
+            it("returns true when there are no quotes") {
                 let vm = rootViewModelWithNoQuotes()
                 expect(vm.nextQuoteButtonHidden).to(equal(true))
             }
 
-            it("visible when there are some quotes") {
+            it("returns false when there are some quotes") {
                 let vm = rootViewModelWithQuotes()
                 expect(vm.nextQuoteButtonHidden).to(equal(false))
             }
         }
 
-        describe("Favorite button") {
+        describe("favoriteButtonHidden") {
 
-            it("hidden when there are no quotes") {
+            it("returns true when there are no quotes") {
                 let vm = rootViewModelWithNoQuotes()
                 expect(vm.favoriteButtonHidden).to(equal(true))
             }
 
-            it("visible when there are some quotes") {
+            it("returns false when there are some quotes") {
                 let vm = rootViewModelWithQuotes()
                 expect(vm.favoriteButtonHidden).to(equal(false))
             }
+        }
 
-            it("title is correct when quote has not been favorited") {
+        describe("favoriteButtonTitle") {
+
+            it("is correct when quote has not been favorited") {
                 let vm = rootViewModelWithQuotes()
                 expect(vm.favoriteButtonTitle).to(equal("Add to favs"))
             }
 
-            it("title is correct when quote has been favorited") {
+            it("is correct when quote has been favorited") {
                 let vm = rootViewModelWithQuotes(selectFavoriteQuote: true)
                 expect(vm.favoriteButtonTitle).to(equal("Remove from favs"))
             }
         }
 
-        describe("Favorite label text") {
+        describe("isFavoriteLabelText") {
 
-            it("text is correct when quote has not been favorited") {
+            it("is correct when quote has not been favorited") {
                 let vm = rootViewModelWithQuotes()
                 expect(vm.isFavoriteLabelText).to(equal("not favorite"))
             }
 
-            it("text is correct when quote has been favorited") {
+            it("is correct when quote has been favorited") {
                 let vm = rootViewModelWithQuotes(selectFavoriteQuote: true)
                 expect(vm.isFavoriteLabelText).to(equal("IS FAVORITE"))
             }

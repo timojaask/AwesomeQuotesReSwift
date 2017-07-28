@@ -5,40 +5,10 @@ import PromiseKit
 
 class FileStorageSpec: QuickSpec {
     override func spec() {
+
         describe("AppStateCodable") {
 
-            it("init with AppState sets quotes and currentQuoteIndex") {
-                let quotes = defaultSetOfQuotes()
-                let currentQuoteIndex = 1
-                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
-
-                let actual = AppStateCodable(appState: expected)
-
-                expect(actual.quotes).to(equal(expected.quotes))
-                expect(actual.currentQuoteIndex).to(equal(expected.currentQuoteIndex))
-            }
-
-            it("init with quote and currentQuoteIndex sets the same named properties") {
-                let quotes = defaultSetOfQuotes()
-                let currentQuoteIndex = 1
-                let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
-
-                let actual = AppStateCodable(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
-
-                expect(actual.quotes).to(equal(expected.quotes))
-                expect(actual.currentQuoteIndex).to(equal(expected.currentQuoteIndex))
-            }
-
-            it("toAppState sets correct quote and currentQuoteIndex") {
-                let expected = AppState(quotes: defaultSetOfQuotes(), currentQuoteIndex: 1)
-
-                let actual = AppStateCodable(appState: expected).toAppState()
-
-                expect(actual.quotes).to(equal(expected.quotes))
-                expect(actual.currentQuoteIndex).to(equal(expected.currentQuoteIndex))
-            }
-
-            it("Encoding and decoding with NSCoder preserves the original AppState") {
+            it("preserves the original AppState when encoding and decoding with NSCoder ") {
                 let quotes = remoteSetOfQuotes(number: 4)
                 let expected = AppState(quotes: quotes, currentQuoteIndex: 1)
 
@@ -50,6 +20,46 @@ class FileStorageSpec: QuickSpec {
                 let actual = unarchived?.toAppState()
 
                 expect(actual).to(equal(expected))
+            }
+
+            describe("init with AppState") {
+
+                it("sets quotes and currentQuoteIndex") {
+                    let quotes = defaultSetOfQuotes()
+                    let currentQuoteIndex = 1
+                    let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
+
+                    let actual = AppStateCodable(appState: expected)
+
+                    expect(actual.quotes).to(equal(expected.quotes))
+                    expect(actual.currentQuoteIndex).to(equal(expected.currentQuoteIndex))
+                }
+            }
+
+            describe("init with quote and currentQuoteIndex") {
+
+                it("sets the same named properties") {
+                    let quotes = defaultSetOfQuotes()
+                    let currentQuoteIndex = 1
+                    let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
+
+                    let actual = AppStateCodable(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
+
+                    expect(actual.quotes).to(equal(expected.quotes))
+                    expect(actual.currentQuoteIndex).to(equal(expected.currentQuoteIndex))
+                }
+            }
+
+            describe("toAppState") {
+
+                it("sets correct quote and currentQuoteIndex") {
+                    let expected = AppState(quotes: defaultSetOfQuotes(), currentQuoteIndex: 1)
+
+                    let actual = AppStateCodable(appState: expected).toAppState()
+
+                    expect(actual.quotes).to(equal(expected.quotes))
+                    expect(actual.currentQuoteIndex).to(equal(expected.currentQuoteIndex))
+                }
             }
         }
 
