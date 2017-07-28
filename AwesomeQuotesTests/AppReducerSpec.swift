@@ -58,7 +58,7 @@ class AppReducerSpec: QuickSpec {
             }
 
             it("does nothing when quotes array is empty") {
-                let stateBefore = stateWithQuotes()
+                let stateBefore = AppState(quotes: [], currentQuoteIndex: -1)
                 let stateAfter = appReducer(action: ToggleFavoriteForCurrentQuote(), state: stateBefore)
 
                 expect(stateAfter).to(equal(stateBefore))
