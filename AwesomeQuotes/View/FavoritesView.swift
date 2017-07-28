@@ -9,12 +9,12 @@ class FavoritesView: UIView {
     let closeButton = CustomButton("X")
     let quotesTableView = UITableView()
     let closeHandler: () -> ()
-    let toggleFavorite: (Quote) -> ()
+    let toggleFavorite: (Int) -> ()
 
     var viewModel: FavoritesViewModel?
 
     init(closeHandler: @escaping () -> (),
-        toggleFavorite: @escaping (Quote) -> ()) {
+        toggleFavorite: @escaping (Int) -> ()) {
         self.closeHandler = closeHandler
         self.toggleFavorite = toggleFavorite
 
@@ -65,8 +65,8 @@ class FavoritesView: UIView {
         closeHandler()
     }
 
-    func toggleFavoriteTapped(quote: Quote) {
-        toggleFavorite(quote)
+    func toggleFavoriteTapped(quoteId: Int) {
+        toggleFavorite(quoteId)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,7 +87,7 @@ extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
         guard let quote = self.viewModel?.quotesToDisplay[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.toggleFavoriteHandler = { _ in self.toggleFavoriteTapped(quote: quote) }
+        cell.toggleFavoriteHandler = { _ in self.toggleFavoriteTapped(quoteId: quote.id) }
         cell.updateView(viewModel: FavoritesCellViewModel(quote: quote))
         return cell
     }

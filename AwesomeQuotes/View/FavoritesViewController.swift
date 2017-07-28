@@ -17,8 +17,8 @@ class FavoritesViewController: BaseViewController {
 
         favoritesView = FavoritesView(
             closeHandler: { [weak self] in self?.close() },
-            toggleFavorite: { [weak self] (quote: Quote) in
-                self?.toggleFavorite(quote: quote)
+            toggleFavorite: { [weak self] (quoteId: Int) in
+                self?.toggleFavorite(quoteId: quoteId)
             }
         )
         self.view = favoritesView
@@ -28,8 +28,8 @@ class FavoritesViewController: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    func toggleFavorite(quote: Quote) {
-        store.dispatch(ToggleFavorite(quote: quote))
+    func toggleFavorite(quoteId: Int) {
+        store.dispatch(ToggleFavorite(quoteId: quoteId))
     }
 
     override func newState(state: AppState) {

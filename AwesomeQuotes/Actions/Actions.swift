@@ -3,7 +3,7 @@ import ReSwift
 struct NextQuote: Action {}
 
 struct ToggleFavorite: Action {
-    let quote: Quote
+    let quoteId: Int
 }
 
 struct ToggleFavoriteForCurrentQuote: Action { }
