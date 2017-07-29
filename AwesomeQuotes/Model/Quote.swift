@@ -13,13 +13,3 @@ struct Quote {
         self.isFavorite = isFavorite
     }
 }
-
-extension Quote: Hashable {
-    var hashValue: Int {
-        return id
-    }
-
-    static func ==(lhs: Quote, rhs: Quote) -> Bool {
-        return lhs.id == rhs.id
-    }
-}

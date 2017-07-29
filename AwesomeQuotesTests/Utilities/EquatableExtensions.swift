@@ -15,4 +15,10 @@ func ==(lhs: Error, rhs: Error) -> Bool {
         lhs.isCancelledError == rhs.isCancelledError
 }
 
-
+extension Quote: Equatable { }
+public func ==(lhs: Quote, rhs: Quote) -> Bool {
+    return lhs.author == rhs.author &&
+        lhs.text == rhs.text &&
+        lhs.isFavorite == rhs.isFavorite &&
+        lhs.id == rhs.id
+}
