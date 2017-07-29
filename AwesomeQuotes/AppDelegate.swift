@@ -7,8 +7,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var app: App?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.app = App(window: UIWindow(frame: UIScreen.main.bounds))
-        self.window = app?.window
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.app = App(window: self.window!)
 
         return true
     }
