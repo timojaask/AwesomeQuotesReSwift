@@ -7,7 +7,7 @@ The application is using a ReSwift unidirectional data flow pattern to manage ap
 
 # TODO
 - **UI:** Style the user interface
-- **Tests:** Write end-to-end functinal tests
+- **Tests:** Write end-to-end functinal tests (A.K.A. iOS UI tests)
 - **Tests:** Add more unit test coverage
 - **Feature:** Social media sharing
 - **Feature:** Daily quote push notification
