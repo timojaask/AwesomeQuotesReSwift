@@ -82,6 +82,36 @@ class AppReducerSpec: QuickSpec {
             }
         }
 
+        describe("ToggleFavorite") {
+            it("does nothing if quote ID not found from state.quotes") {
+                let quotes = [
+                    Quote(id: 0, text: "text0", author: "author0"),
+                    Quote(id: 1, text: "text1", author: "author1"),
+                    Quote(id: 2, text: "text2", author: "author2"),
+                ]
+                let nonexistentQuoteId = 999
+                let stateBefore = AppState(quotes: quotes, currentQuoteIndex: 1)
+                let stateAfter = appReducer(action: ToggleFavorite(quoteId: nonexistentQuoteId), state: stateBefore)
+
+                expect(stateAfter).to(equal(stateBefore))
+            }
+
+            it("toggles favorite for a given quote ID") {
+                let quotes = [
+                    Quote(id: 0, text: "text0", author: "author0", isFavorite: false),
+                    Quote(id: 1, text: "text1", author: "author1", isFavorite: false),
+                    Quote(id: 2, text: "text2", author: "author2", isFavorite: false),
+                ]
+                let quoteIndex = 2
+                let quoteIdToToggle = quotes[quoteIndex].id
+                let stateBefore = AppState(quotes: quotes, currentQuoteIndex: 0)
+                let stateAfter = appReducer(action: ToggleFavorite(quoteId: quoteIdToToggle), state: stateBefore)
+
+                expect(stateAfter).toNot(equal(stateBefore))
+                expect(stateAfter.quotes[quoteIndex].isFavorite).to(beTrue())
+            }
+        }
+
         describe("mergeFetchedQuotes") { 
             it("includes remoteQuotes when localQuotes is empty") {
                 let remoteQuotes = remoteSetOfQuotes()
