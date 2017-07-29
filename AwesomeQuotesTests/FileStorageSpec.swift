@@ -105,6 +105,7 @@ class FileStorageSpec: QuickSpec {
         describe("FileStorage") { 
             // This is an integration test that doesn't try to mock out the actual file system I/O
             let testStorageFileName = "AwesomeQuotesTests-appState"
+            let fileStorage = FileStorage(fileName: testStorageFileName)
 
             beforeEach {
                 clearLocalStorage(fileName: testStorageFileName)
@@ -114,19 +115,17 @@ class FileStorageSpec: QuickSpec {
                 clearLocalStorage(fileName: testStorageFileName)
             }
 
+            func handleError(error: Error) {
+                fail("loadState failed with error: \(error.localizedDescription)")
+            }
 
-            it("Writing and reading AppState to FileStorage preserves all properties") {
+
+            it("preserves all properties when writing and reading AppState to FileStorage") {
                 let quotes = defaultSetOfQuotes()
                 let currentQuoteIndex = 1
+
                 let expected = AppState(quotes: quotes, currentQuoteIndex: currentQuoteIndex)
-
                 var actual: AppState?
-
-                let fileStorage = FileStorage(fileName: testStorageFileName)
-
-                func handleError(error: Error) {
-                    fail("loadState failed with error: \(error.localizedDescription)")
-                }
 
                 func loadState() {
                     fileStorage.loadState()
@@ -138,6 +137,19 @@ class FileStorageSpec: QuickSpec {
 
                 fileStorage.saveState(state: expected)
                     .then(execute: loadState)
+                    .catch(execute: handleError)
+
+                expect(actual).toEventually(equal(expected), timeout: 1)
+            }
+
+            it("retuns a fresh AppState on load if no previous state was saved") {
+                let expected = AppState()
+                var actual: AppState?
+
+                fileStorage.loadState()
+                    .then { appState -> Void in
+                        actual = appState
+                    }
                     .catch(execute: handleError)
 
                 expect(actual).toEventually(equal(expected), timeout: 1)
