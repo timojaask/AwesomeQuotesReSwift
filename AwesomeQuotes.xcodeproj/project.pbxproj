@@ -57,6 +57,7 @@
 		2FC164871F126175004DCF00 /* ResponseJsonSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC164861F126175004DCF00 /* ResponseJsonSerialization.swift */; };
 		2FC1648C1F127C0B004DCF00 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1648B1F127C0B004DCF00 /* FileStorage.swift */; };
 		2FC1648F1F127C46004DCF00 /* FileStorageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */; };
+		2FD71B7B1F2D07210023B425 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71B7A1F2D07210023B425 /* App.swift */; };
 		32938918800CEB201E3BF859 /* Pods_AwesomeQuotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C0670999706ECA21318B27 /* Pods_AwesomeQuotesUITests.framework */; };
 		E72332094DD6110881EEB44A /* Pods_AwesomeQuotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76CA0B28256A5539A80FE08 /* Pods_AwesomeQuotes.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,7 @@
 		2FC164861F126175004DCF00 /* ResponseJsonSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResponseJsonSerialization.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2FC1648B1F127C0B004DCF00 /* FileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		2FC1648E1F127C46004DCF00 /* FileStorageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FileStorageSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2FD71B7A1F2D07210023B425 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		537BC2DB8E99E4166694BDA6 /* Pods-AwesomeQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75EB72EC3AEB32636978200C /* Pods-AwesomeQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesTests/Pods-AwesomeQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DBD03E1AD05D99635B2E9DD /* Pods-AwesomeQuotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeQuotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeQuotesUITests/Pods-AwesomeQuotesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		2F0594551EFC028A000E013D /* AwesomeQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				2FD71B7A1F2D07210023B425 /* App.swift */,
 				2F0594561EFC028A000E013D /* AppDelegate.swift */,
 				2FC1132F1F2195D4001A3E7D /* AppState.swift */,
 				2FC113301F2195D4001A3E7D /* MainStore.swift */,
@@ -664,6 +667,7 @@
 				2FAFA1941F0889D10031FF15 /* LocalStorage.swift in Sources */,
 				2F0594591EFC028A000E013D /* RootViewController.swift in Sources */,
 				2F0BF0011EFEF18D00775B7A /* CustomButton.swift in Sources */,
+				2FD71B7B1F2D07210023B425 /* App.swift in Sources */,
 				2FC113421F21962A001A3E7D /* StorePersister.swift in Sources */,
 				2FC113361F219610001A3E7D /* Actions.swift in Sources */,
 				2F82B8AF1F23A15000022F8C /* FavoritesViewModel.swift in Sources */,
