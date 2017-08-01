@@ -5,16 +5,17 @@ import PromiseKit
 let localStorageAppStateFileName = "AwesomeQuotes-appState"
 
 struct App {
-    // StatePersister must have a strong reference, because we don't want it to ever be deallocated.
+    // StatePersister must have a strong reference, because we don't want it to be deallocated.
     let statePersister: StatePersister
 
     init(window: UIWindow) {
+        let quotesService = RemoteQuotesService(networkService: AppNetworkService())
         let fileStorage = FileStorage(fileName: localStorageAppStateFileName)
         let statePersister = StatePersister(localStorage: fileStorage)
         self.statePersister = statePersister
 
         loadAppState(fileStorage: fileStorage)
-            .then { appState in initStore(appState: appState) }
+            .then { appState in initStore(appState: appState, quotesService: quotesService) }
             .then { store in initStoreSubscriptions(store: store, statePersister: statePersister) }
             .then { store in dispatchFetchQuotesAction(store: store) }
             .then { store in initRootViewController(store: store) }
@@ -23,13 +24,12 @@ struct App {
     }
 }
 
-func loadAppState(fileStorage: FileStorage) -> Promise<AppState> {
+func loadAppState(fileStorage: LocalStorage) -> Promise<AppState> {
     return fileStorage.loadState()
         .recover { _ in return AppState() }
 }
 
-func initStore(appState: AppState) -> MainStore {
-    let quotesService = RemoteQuotesService(networkService: AppNetworkService())
+func initStore(appState: AppState, quotesService: RemoteQuotesService) -> MainStore {
     let sideEffects = injectService(service: quotesService, receivers: quotesServiceSideEffects)
     let middleware = createMiddleware(items: sideEffects)
     return Store<AppState>(reducer: appReducer, state: appState, middleware: [middleware])
