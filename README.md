@@ -15,3 +15,7 @@ The application is using a ReSwift unidirectional data flow pattern to manage ap
 - **Feature:** Daily quote push notification
 - **Feature:** Settings screen (notification settings, copyright, about)
 - **Content:** Add more quotes
+
+---
+
+Note that the quotes that were hosted on https://jsonblob.com/api/jsonBlob/16fa9170-706f-11e7-9e0d-1bb120f11060 and used as data source for this app are no longer available, and right now I don't have time to upload them somewhere else, so for not this app is not functional, but still a good example of how to write an actual app using the pattern.
